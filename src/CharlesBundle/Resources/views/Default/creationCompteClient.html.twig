@@ -4,7 +4,7 @@
 
 <head>
     <title>nounou.esc.com</title>
-    {# <link rel="shortcut icon" href="/Nounou.esc.com.ico"> #}
+      <link rel="shortcut icon" href="/Nounou.esc.com.ico">
 
     <style>
 
@@ -142,18 +142,53 @@
         </header>
         <div class="BottomLine"></div>
         <section>
-            <h4>Accueil</h4>
-            <ul>
-                <li>
-                    <a href="#">Se connecter</a>
-                </li>
-                <li>
-                    <a href="#">Créer un compte Nounou</a>
-                </li>
-                <li>
-                    <a href="#">Créer un compte Client</a>
-                </li>
-            </ul>
+          Entrez votre identifiant et votre mot de passe.<br>
+          <form action="login.php" method="post">
+            <p>
+              <table>
+                <tr>
+                  <td><label>Pseudo :</label></td>
+                  <td><input type="id" name="id" placeholder="Pseudo"/><br></td>
+                </tr>
+                <tr>
+                  <td><label>Mot de passe :</label></td>
+                  <td><input type="password" name="mot_de_passe" placeholder="Mot de passe"/><br></td>
+                </tr>
+                <tr>
+                  <td><label>Nom :</label></td>
+                  <td><input type="id" name="Nom" placeholder="Nom"/><br></td>
+                </tr>
+                <tr>
+                  <td><label>Prénom :</label></td>
+                  <td><input type="id" name="Prenom" placeholder="Prénom"/><br></td>
+                </tr>
+                <tr>
+                  <td><label>Sexe :</label></td>
+                  <td><select>
+                    <option value="">Sélectionnez un genre</option>
+                    <option value="homme">Homme</option>
+                    <option value="femme">Femme</option>
+                    <option value="transhomme">Transexuel homme</option>
+                    <option value="transfemme">Transexuel femme</option>
+                    <option value="helico">Hélicoptère de combat</option>
+                  </select><br></td>
+                </tr>
+                <tr>
+                  <td><label>Email :</label></td>
+                  <td><input type="id" name="mail" placeholder="Adresse Mail"/><br></td>
+                </tr>
+                <tr>
+                  <td><label>Téléphone :</label></td>
+                  <td><input type="id" name="tel" placeholder="Téléphone"/></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td><input type="submit" value="Valider" style="border-radius: 4px; background-color:#FFE4E1;"/></td>
+                </tr>
+              </table>
+            </p>
+          </form>
+          <center>Connectez vous <a href="index.html.twig">ici.</a></center>
         </section>
         <div class="BottomLine"></div>
     </main>

@@ -4,7 +4,7 @@
 
 <head>
     <title>nounou.esc.com</title>
-    {# <link rel="shortcut icon" href="/Nounou.esc.com.ico"> #}
+      <link rel="shortcut icon" href="/Nounou.esc.com.ico">
 
     <style>
 
@@ -142,18 +142,15 @@
         </header>
         <div class="BottomLine"></div>
         <section>
-            <h4>Accueil</h4>
-            <ul>
-                <li>
-                    <a href="#">Se connecter</a>
-                </li>
-                <li>
-                    <a href="#">Créer un compte Nounou</a>
-                </li>
-                <li>
-                    <a href="#">Créer un compte Client</a>
-                </li>
-            </ul>
+          Entrez votre identifiant et votre mot de passe.<br>
+          <form action="login.php" method="post">
+            <p>
+              <input type="id" name="id" placeholder="Identifiant"/><br>
+              <input type="password" name="mot_de_passe" placeholder="Mot de passe"/>
+              <input type="submit" value="Valider" style="border-radius: 4px; background-color:#FFE4E1"/>
+            </p>
+          </form>
+          <center>Inscrivez vous <a href="index.html.twig">ici.</a></center>
         </section>
         <div class="BottomLine"></div>
     </main>
