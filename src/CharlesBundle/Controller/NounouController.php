@@ -66,7 +66,7 @@ class NounouController extends Controller
 
         if (!$nounou) {
             throw $this->createNotFoundException(
-                'There are no nounous with the following id: ' . $id
+                'There is no nounou with the following id: ' . $id
             );
         }
 
