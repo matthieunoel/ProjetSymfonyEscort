@@ -43,6 +43,13 @@ class Surveillance
     private $srvLieu;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="srv_valide", type="boolean")
+     */
+    private $srvValide;
+
+    /**
      * @ORM\ManyToOne(targetEntity=Nounou::class)
      */
     protected $nounou;
@@ -132,6 +139,30 @@ class Surveillance
     public function getSrvLieu()
     {
         return $this->srvLieu;
+    }
+
+    /**
+     * Set srvValide
+     *
+     * @param boolean $srvValide
+     *
+     * @return Surveillance
+     */
+    public function setSrvValide($srvValide)
+    {
+        $this->srvValide = $srvValide;
+
+        return $this;
+    }
+
+    /**
+     * Get srvValide
+     *
+     * @return boolean
+     */
+    public function getSrvValide()
+    {
+        return $this->srvValide;
     }
 }
 
