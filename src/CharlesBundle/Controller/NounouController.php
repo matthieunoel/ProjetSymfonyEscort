@@ -83,7 +83,7 @@ class NounouController extends Controller
                     'Code wifi' => 6,
                     'Raptor' => 7,
                     'Ne prefere pas en parler' => 8,
-                    'Rock' => 9,
+                    'Cailloux' => 9,
                     'Autre' => 0,
                 ]
             ])
