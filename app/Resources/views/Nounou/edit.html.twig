@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 
 <html>
 
@@ -151,34 +151,75 @@
         </header>
         <div class="BottomLine"></div>
         <section>
-            <h4>Liste des nounous</h4>
+            <h4>Modifer son compte nounou</h4>
             
-            {% if nounous is not empty %}
+            {{ form_start(form) }}
+
                 <table>
-                    <thead>
-                        <tr>
-                        <th>Prenom</th>
-                        <th>Nom</th>
-                        <th>Age</th>
-                        <th>Tarif</th>
-                        {# <th>Voir le profil</th> #}
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {% for nounou in nounous %}
-                        <tr>
-                            <td>{{ nounou.nounouPrenom }}</td>
-                            <td>{{ nounou.nounouNom | upper }}</td>
-                            <td>{{ nounou.nounouDateNaiss | xdate('Y-m-d') }}</td>
-                            <td>{{ nounou.nounouTarif }}</td>
-                            <td class=""><a href="voir-nounou/{{ nounou.id }}">Voir le profil</a></td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
+                <tbody>
+                    <tr>
+                    <th>Nom:</th>
+                    <td>{{ form_widget(form.nounouNom) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Prenom:</th>
+                    <td>{{ form_widget(form.nounouPrenom) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Sexe:</th>
+                    <td>{{ form_widget(form.nounouSexe) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Mail:</th>
+                    <td>{{ form_widget(form.nounouMail) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Date de naissance:</th>
+                    <td>{{ form_widget(form.nounouDateNaiss) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Tarif:</th>
+                    <td>{{ form_widget(form.nounouTarif) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Desc:</th>
+                    <td>{{ form_widget(form.nounouDesc) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Adresse:</th>
+                    <td>{{ form_widget(form.nounouAdresse) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Telephone pro:</th>
+                    <td>{{ form_widget(form.nounouTelPro) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Telephone personnel:</th>
+                    <td>{{ form_widget(form.nounouTelPerso) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Date de naissance:</th>
+                    <td>{{ form_widget(form.nounouDateNaiss) }}</td>
+                    </tr>
+                    <tr>
+                    <th></th>
+                    <td>{{ form_widget(form.save) }}</td>
+                    </tr>
+{# ->add('Nom', TextType::class)
+            ->add('Prenom', TextType::class)
+            ->add('Sexe', ChoiceType::class)
+            ->add('Mail', EmailType::class)
+            ->add('DateNaiss', DateType::class)
+            ->add('Tarif', TextType::class)
+            ->add('Desc', TextareaType::class)
+            ->add('Adresse', TextType::class)
+            ->add('TelPro', TelType::class)
+            ->add('TelPerso', TelType::class) #}
+
+                </tbody>
                 </table>
-            {% else %}
-                <p>No nounou found.</p>
-            {% endif %}
+
+            {{ form_end(form) }} 
 
         </section>
         <div class="BottomLine"></div>
