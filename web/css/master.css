@@ -1,0 +1,290 @@
+/* --- GENERAL ---*/
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial,Helvetica,sans-serif;
+    padding: 0;
+    margin: 0;
+    background-image: url(https://previews.123rf.com/images/nsit0108/nsit01081811/nsit0108181104361/127729634-heart-candy-box-pattern-seamless-repeat-background-for-any-web-design.jpg);
+    background-size: 500px auto;
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+a {
+    color: black;
+}
+
+main {
+    width: 50vw;
+    margin-left: 25vw;
+    margin-top: 0;
+    margin-bottom: 2vh;
+    background-color: #F3AED9;
+    padding: 0;
+}
+
+header {
+    padding: 1.2em 1em;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: space-between;
+}
+
+header .TextCadre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+h3{
+    margin: 0;
+}
+
+.CircleForPic {
+    height: 10vh;
+    width: 10vh;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.9);
+
+}
+
+.CircleForPic img {
+    height: 10vh;
+    width: auto;
+}
+
+.BottomLine {
+   background-color: rgba(0, 0, 0, 0.1);
+   height: 5px;
+}
+
+section {
+    margin: 1em;
+    padding: 0.7vh 0 1.7vh 0;
+}
+
+section h4 {
+    font-size: 1.3em;
+    margin-bottom: 1em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5vw;
+}
+
+form .TextArea {
+    border: none;
+    border-bottom: black solid 1px;
+    color: black;
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0.7em;
+    font-size: 1em;
+    padding-left: 1em;
+    padding-bottom: 0.2em;
+}
+
+form .Button {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    text-align: right;
+    padding-right: 1em;
+    color: black;
+    font-size: 1.05em;
+}
+
+form .Button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+input:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: black;
+    opacity: 1;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li a {
+    margin: 0.7em 0.7em 0 0.7em;
+    display: flex;
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.5vw;
+    text-decoration: none;
+    padding: 0.7em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+li a:hover {
+    filter: invert(100%);
+}
+
+
+/* --- EDIT --- */
+
+a.button {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+
+            text-decoration: none;
+            color: initial;
+        }
+
+th, td {
+            border: 1px black solid;
+            margin: 0;
+            padding: 10px;
+        }
+
+        th {
+            text-align: left;
+        }
+
+
+/* --- VIEW --- */
+
+#ColumnRight {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        #ColumnLeft {
+            display: flex;
+            flex-direction: column;
+            flex: 2;
+        }
+
+        #TopDesc {
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 0.5vw;
+            padding: 0.7em;
+        }
+
+        #Desc {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 0.7em;
+            margin-top: 0.7em;
+            border-radius: 0.5vw;
+        }
+
+        #Contact {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 0.7em;
+            flex: 1;
+            margin: 0 0.7em 0 0.7em;
+            border-radius: 0.5vw;
+        }
+
+        #Contact h4 {
+            font-size: 1em;
+            margin: 0 0 0.2em 0;
+        }
+
+        #Contact p {
+            margin-bottom: 1em;
+        }
+
+        .ProfilContainer a {
+            margin: 0.7em 0.7em 0 0.7em;
+            display: flex;
+            flex: 1;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 0.5vw;
+            text-decoration: none;
+            padding: 0.7em;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .ProfilContainer a:hover {
+            filter: invert(100%);
+        }
+
+.ProfilContainer {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .ProfilContainer p {
+            margin: 0;
+            padding: 0;
+        }
+
+        #ProfilHeader {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 1em;
+        }
+
+        #SpecialCircle {
+            -webkit-filter: invert(99%);
+            filter: invert(99%);
+            -webkit-transform: scaleY(-1);
+            transform: scaleY(-1);
+        }
+
+        #ColumnRight {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        #ColumnLeft {
+            display: flex;
+            flex-direction: column;
+            flex: 2;
+        }
+
+        /* #Desc {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 0.7em;
+            margin-top: 0.7em;
+            border-radius: 0.5vw;
+        }
+
+        #Contact {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 0.7em;
+            flex: 1;
+            margin: 0.7em 0.7em 0 0.7em;
+            border-radius: 0.5vw;
+        }
+
+        #Contact h4 {
+            font-size: 1em;
+            margin: 0 0 0.2em 0;
+        }
+
+        #Contact p {
+            margin-bottom: 1em;
+        } */

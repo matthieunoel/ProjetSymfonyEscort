@@ -81,13 +81,12 @@ class NounouController extends Controller
             ->add('nounouAdresse', TextType::class)
             ->add('nounouTelPro', TelType::class)
             ->add('nounouTelPerso', TelType::class)
-            ->add('save', SubmitType::class, array('label' => 'Mettre a jour')
-            ->add('delete', ButtonType::class, array('label' => 'Supprimer le compte')))
+            ->add('save', SubmitType::class, array('label' => 'Mettre a jour'))
             ->getForm();
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted()) {
+        if ($form->isSubmitted() && $form->isValid()) {
 
             $nounou = $form->getData();
             $em->flush();
@@ -97,7 +96,7 @@ class NounouController extends Controller
 
         return $this->render(
             'nounou/edit.html.twig',
-            array('form' => $form->createView())
+            array('form' => $form->createView(), 'id' => $id)
         );
     }
 
