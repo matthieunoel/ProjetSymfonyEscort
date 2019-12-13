@@ -45,7 +45,9 @@
                     </tr>
                     <tr>
                     <th>Sexe:</th>
-                    <td>{{ form_widget(form.nounouSexe) }}</td>
+                    <td>
+                    {{ form_widget(form.nounouSexe) }}
+                    </td>
                     </tr>
                     <tr>
                     <th>Date de naissance:</th>
@@ -76,7 +78,7 @@
                     <td>
                         {{ form_widget(form.save) }} 
                         {% if app.request.pathinfo | slice(1, 5) == 'modif' %} 
-                            <a href={{ ("/suppr-nounou/" ~ id) | trans }} class="button">Supprimer</a>
+                            <a href={{ ("/suppr-nounou/" ~ id) | trans }} class="Button">Supprimer</a>
                         {% endif %}
                     </td>
                     </tr>

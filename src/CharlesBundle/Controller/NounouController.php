@@ -13,6 +13,7 @@ namespace CharlesBundle\Controller;
     use CharlesBundle\Entity\Nounou;
     // use Doctrine\DBAL\Types\DateType;
     use Doctrine\DBAL\Types\TextType as TypesTextType;
+use Doctrine\ORM\Mapping\Id;
 use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
     use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -57,8 +58,8 @@ class NounouController extends Controller
         }
 
         $form = $this->createFormBuilder($nounou)
-            ->add('nounouNom', TextType::class)
-            ->add('nounouPrenom', TextType::class)
+            ->add('nounouNom', TextType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('nounouPrenom', TextType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('nounouSexe', ChoiceType::class, [
                 'choices'  => [
                     'Homme' => 1,
@@ -71,17 +72,20 @@ class NounouController extends Controller
                     'Ne prefere pas en parler' => 8,
                     'Cailloux' => 9,
                     'Autre' => 0,
-                ]
+                ],
+                'attr' => [
+                    'class' => 'ChoiceArea'
+                ],
             ])
-            ->add('nounouMdp', PasswordType::class)
-            ->add('nounouMail', EmailType::class)
-            ->add('nounouDateNaiss', DateType::class)
-            ->add('nounouTarif', TextType::class)
-            ->add('nounouDesc', TextareaType::class)
-            ->add('nounouAdresse', TextType::class)
-            ->add('nounouTelPro', TelType::class)
-            ->add('nounouTelPerso', TelType::class)
-            ->add('save', SubmitType::class, array('label' => 'Mettre a jour'))
+            ->add('nounouMdp', PasswordType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('nounouMail', EmailType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('nounouDateNaiss', DateType::class, ['attr' => ['class' => 'DateArea'],])
+            ->add('nounouTarif', TextType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('nounouDesc', TextareaType::class, ['attr' => ['class' => 'TextBoxArea'],])
+            ->add('nounouAdresse', TextType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('nounouTelPro', TelType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('nounouTelPerso', TelType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('save', SubmitType::class, ['label' => 'Mettre a jour', 'attr' => ['class' => 'Button']])
             ->getForm();
 
         $form->handleRequest($request);
@@ -108,9 +112,9 @@ class NounouController extends Controller
 
         $nounou = new nounou();
         $form = $this->createFormBuilder($nounou)
-            ->add('nounouMdp', PasswordType::class)
-            ->add('nounouNom', TextType::class)
-            ->add('nounouPrenom', TextType::class)
+            ->add('nounouMdp', PasswordType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('nounouNom', TextType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('nounouPrenom', TextType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('nounouSexe', ChoiceType::class, [
                 'choices'  => [
                     'Homme' => 1,
@@ -123,16 +127,19 @@ class NounouController extends Controller
                     'Ne prefere pas en parler' => 8,
                     'Cailloux' => 9,
                     'Autre' => 0,
-                ]
+                ],
+                'attr' => [
+                    'class' => 'ChoiceArea'
+                ],
             ])
-            ->add('nounouMail', EmailType::class)
-            ->add('nounouDateNaiss', DateType::class)
-            ->add('nounouTarif', TextType::class)
-            ->add('nounouDesc', TextareaType::class)
-            ->add('nounouAdresse', TextType::class)
-            ->add('nounouTelPro', TelType::class)
-            ->add('nounouTelPerso', TelType::class)
-            ->add('save', SubmitType::class, array('label' => 'Valider'))
+            ->add('nounouMail', EmailType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('nounouDateNaiss', DateType::class, ['attr' => ['class' => 'DateArea'],])
+            ->add('nounouTarif', TextType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('nounouDesc', TextareaType::class, ['attr' => ['class' => 'TextBoxArea'],])
+            ->add('nounouAdresse', TextType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('nounouTelPro', TelType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('nounouTelPerso', TelType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('save', SubmitType::class, ['label' => 'Valider', 'attr' => ['class' => 'Button']])
             ->getForm(); 
 
         $form->handleRequest($request);
