@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 
@@ -64,7 +64,7 @@
     
         }
     
-        header img {
+        .CircleForPic img {
             height: 10vh;
             width: auto;
         }
@@ -134,6 +134,68 @@
             text-align: left;
         }
 
+        /* --- Specific code for Profil page ---*/
+
+        .ProfilContainer {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .ProfilContainer p {
+            margin: 0;
+            padding: 0;
+        }
+
+        #ProfilHeader {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 1em;
+        }
+
+        #SpecialCircle {
+            -webkit-filter: invert(99%);
+            filter: invert(99%);
+            -webkit-transform: scaleY(-1);
+            transform: scaleY(-1);
+        }
+
+        #ColumnRight {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        #ColumnLeft {
+            display: flex;
+            flex-direction: column;
+            flex: 2;
+        }
+
+        #Desc {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 0.7em;
+            margin-top: 0.7em;
+            border-radius: 0.5vw;
+        }
+
+        #Contact {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 0.7em;
+            flex: 1;
+            margin: 0.7em 0.7em 0 0.7em;
+            border-radius: 0.5vw;
+        }
+
+        #Contact h4 {
+            font-size: 1em;
+            margin: 0 0 0.2em 0;
+        }
+
+        #Contact p {
+            margin-bottom: 1em;
+        }
+
     </style>
     
 </head>
@@ -151,65 +213,60 @@
         </header>
         <div class="BottomLine"></div>
         <section>
-            <h4>Compte nounou</h4>
+            {# <h4>Liste des nounous</h4> #}
             
-            {{ form_start(form) }}
+            <div id="ProfilHeader">
+                <h4>{{ nounou.nounouNom | upper }}  {{ nounou.nounouPrenom }}</h4>
+                <div class="CircleForPic" id="SpecialCircle">
+                    <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
+                </div>
+            </div>
+            <div class="ProfilContainer">
+                <div id="ColumnLeft">
+                    <p>Un homme né le {{ nounou.nounouDateNaiss | date('d-m-Y') }}.</p>
+                    <p>Demande une paye de {{ nounou.nounouTarif }} euros/h</p>
+                    <div id="Desc">
+                        {{ nounou.nounouDesc }}
+                    </div>
+                </div>
+                <div id="ColumnRight">
+                    <div id="Contact">
+                        <h4>
+                            Telephone :
+                        </h4>
+                        <p>
+                            {{ nounou.nounouTelPro }}
+                        </p>
+                        <h4>
+                            Adresse mail :
+                        </h4>
+                        <p>
+                            {{ nounou.nounouMail }}
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-                <table>
-                <tbody>
-                    <tr>
-                    <th>Mail:</th>
-                    <td>{{ form_widget(form.nounouMail) }}</td>
-                    </tr>
-                    <tr>
-                    <th>Mot de passe:</th>
-                    <td>{{ form_widget(form.nounouMdp) }}</td>
-                    </tr>
-                    <tr>
-                    <th>Nom:</th>
-                    <td>{{ form_widget(form.nounouNom) }}</td>
-                    </tr>
-                    <tr>
-                    <th>Prenom:</th>
-                    <td>{{ form_widget(form.nounouPrenom) }}</td>
-                    </tr>
-                    <tr>
-                    <th>Sexe:</th>
-                    <td>{{ form_widget(form.nounouSexe) }}</td>
-                    </tr>
-                    <tr>
-                    <th>Date de naissance:</th>
-                    <td>{{ form_widget(form.nounouDateNaiss) }}</td>
-                    </tr>
-                    <tr>
-                    <th>Tarif:</th>
-                    <td>{{ form_widget(form.nounouTarif) }}</td>
-                    </tr>
-                    <tr>
-                    <th>Desc:</th>
-                    <td>{{ form_widget(form.nounouDesc) }}</td>
-                    </tr>
-                    <tr>
-                    <th>Adresse:</th>
-                    <td>{{ form_widget(form.nounouAdresse) }}</td>
-                    </tr>
-                    <tr>
-                    <th>Telephone pro:</th>
-                    <td>{{ form_widget(form.nounouTelPro) }}</td>
-                    </tr>
-                    <tr>
-                    <th>Telephone personnel:</th>
-                    <td>{{ form_widget(form.nounouTelPerso) }}</td>
-                    </tr>
-                    <tr>
-                    <th></th>
-                    <td>{{ form_widget(form.save) }} {% if form.delete is defined %} {{ form.delete }} {% endif %} </td>
-                    </tr>
-
-                </tbody>
-                </table>
-
-            {{ form_end(form) }} 
+            {# <table>
+            <tbody>
+                <tr>
+                <th>Title:</th>
+                <td>{{ article.title }}</td>
+                </tr>
+                <tr>
+                <th>Author:</th>
+                <td>{{ article.author }}</td>
+                </tr>
+                <tr>
+                <th>Article Body:</th>
+                <td>{{ article.body }}</td>
+                </tr>
+                <tr>
+                <th>Homepage:</th>
+                <td>{{ article.url }}</td>
+                </tr>
+            </tbody>
+            </table> #}
 
         </section>
         <div class="BottomLine"></div>

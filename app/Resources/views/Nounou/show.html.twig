@@ -169,7 +169,7 @@
                         <tr>
                             <td>{{ nounou.nounouPrenom }}</td>
                             <td>{{ nounou.nounouNom | upper }}</td>
-                            <td>{{ nounou.nounouDateNaiss | xdate('Y-m-d') }}</td>
+                            <td>{{ nounou.nounouDateNaiss | date('Y-m-d') }}</td>
                             <td>{{ nounou.nounouTarif }}</td>
                             <td class=""><a href="voir-nounou/{{ nounou.id }}">Voir le profil</a></td>
                         </tr>
