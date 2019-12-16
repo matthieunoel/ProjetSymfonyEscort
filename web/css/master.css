@@ -173,55 +173,8 @@ h1.Erreur {
     margin: 5vh 0;
 }
 
-/* --- EDIT --- */
-
-/* form a.button {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-
-    text-decoration: none;
-    color: initial;
-} */
-
-form th, form td {
-    /* border-bottom: 1px rgba(0, 0, 0, 0.75) solid; */
-    margin: 0;
-    padding: 0.7em;
-}
-
-form th {
-    text-align: right;
-    vertical-align: text-top;
-}
-
-form table {
-    border-collapse: separate;
-    border-spacing: 0px;
-}
-
-form .ChoiceArea, .DateArea select {
-    background-color: rgba(255, 255, 255, 0.75);
-    border: none;
-    outline: none;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-}
-
-form .ChoiceArea option, .DateArea select option {
-    background-color: rgba(243, 174, 217, 0.5);
-}
-
-form .ChoiceArea:hover, .DateArea select:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
-form a {
-    text-decoration: none;
-    padding: 1px 6px 1px 6px;
-}
 
 /* --- MONTRER-TOUT --- */
-
 
 th, td {
     margin: 0;
@@ -281,6 +234,54 @@ td.RightLink a:hover {
     filter: invert(100%);
 }
 
+/* --- EDIT --- */
+
+/* form a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+} */
+
+form th, form td {
+    /* border-bottom: 1px rgba(0, 0, 0, 0.75) solid; */
+    margin: 0;
+    padding: 0.7em;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+form th {
+    text-align: right;
+    vertical-align: text-top;
+}
+
+form table {
+    border-collapse: separate;
+    border-spacing: 0px;
+}
+
+form .ChoiceArea, .DateArea select {
+    background-color: rgba(255, 255, 255, 0.75);
+    border: none;
+    outline: none;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+form .ChoiceArea option, .DateArea select option {
+    background-color: rgba(243, 174, 217, 0.5);
+}
+
+form .ChoiceArea:hover, .DateArea select:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+form a {
+    text-decoration: none;
+    padding: 1px 6px 1px 6px;
+}
 
 /* --- VIEW --- */
 
