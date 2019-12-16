@@ -20,6 +20,9 @@
         </header>
         <div class="BottomLine"></div>
         <section>
+            {% if Erreur %}
+            <h1 class="Erreur"> Erreur : {{ Erreur }} </h1>
+            {% else %}
             <div id="ProfilHeader">
                 <h4>{{ nounou.nounouNom | upper }}  {{ nounou.nounouPrenom }}</h4>
                 <div class="CircleForPic" id="SpecialCircle">
@@ -52,11 +55,16 @@
                         </p>
                     </div>
                     <p>
-                        <a href={{ ("/modif-nounou/" ~ nounou.id) | trans }}>Modifier le compte</a>
+                        <a href="/montrer-nounous">Voir la liste des nounous</a>
                     </p>
+                    {% if IsLogin %}
+                        <p>
+                            <a href={{ ("/modif-nounou/" ~ nounou.id) | trans }}>Modifier le compte</a>
+                        </p>
+                    {% endif %}
                 </div>
             </div>
-
+            {% endif %}
         </section>
         <div class="BottomLine"></div>
     </main>

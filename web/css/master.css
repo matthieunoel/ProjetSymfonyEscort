@@ -166,6 +166,13 @@ li a:hover {
     filter: invert(100%);
 }
 
+h1.Erreur {
+    /* color: b; */
+    width: 100%;
+    text-align: center;
+    margin: 5vh 0;
+}
+
 /* --- EDIT --- */
 
 /* form a.button {
@@ -211,6 +218,67 @@ form .ChoiceArea:hover, .DateArea select:hover {
 form a {
     text-decoration: none;
     padding: 1px 6px 1px 6px;
+}
+
+/* --- MONTRER-TOUT --- */
+
+
+th, td {
+    margin: 0;
+    padding: 0.7em;
+    border: black solid 1px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+th {
+    text-align: center;
+    vertical-align: text-top;
+    border-top: black solid 2px;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0px;
+}
+
+.LeftThOrTd {
+    border-left: black solid 2px;
+}
+
+.RightThOrTd {
+    border-right: black solid 2px;
+}
+
+.RightInvisibleTh {
+    border: none;
+    border-left: black solid 1px;
+    /* border-bottom: black solid 1px; */
+    background-color: rgba(0, 0, 0, 0);
+}
+
+td.RightLink {
+    border: none;
+    border-left: black solid 1px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+td.RightLink a {
+    /* margin: 0.7em 0.7em 0 0.7em; */
+    display: flex;
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.5vw;
+    text-decoration: none;
+    padding: 0.7em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+td.RightLink a:hover {
+    filter: invert(100%);
 }
 
 

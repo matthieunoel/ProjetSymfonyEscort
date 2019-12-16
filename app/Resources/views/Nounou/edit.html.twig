@@ -21,6 +21,11 @@
         </header>
         <div class="BottomLine"></div>
         <section>
+
+            {% if Erreur %}
+            <h1 class="Erreur"> Erreur : {{ Erreur }} </h1>
+            {% else %}
+
             <h4>Compte nounou</h4>
             
             {{ form_start(form) }}
@@ -87,6 +92,8 @@
                 </table>
 
             {{ form_end(form) }} 
+
+            {% endif %}
 
         </section>
         <div class="BottomLine"></div>

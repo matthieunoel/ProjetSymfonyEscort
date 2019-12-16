@@ -51,9 +51,17 @@ class NounouController extends Controller
         $em = $this->getDoctrine()->getManager();
         $nounou = $em->getRepository('CharlesBundle:Nounou')->find($id);
 
+        // if (!$nounou) {
+        //     throw $this->createNotFoundException(
+        //         'Il n\'y a pas de nounou ayant l\'id ' . $id
+        //     );
+        // }
+
         if (!$nounou) {
-            throw $this->createNotFoundException(
-                'There are no nounous with the following id: ' . $id
+            $Erreur = 'Il n\'y a pas de nounou ayant l\'id ' . $id;
+            return $this->render(
+                'nounou/view.html.twig',
+                array('Erreur' => $Erreur)
             );
         }
 
@@ -171,15 +179,26 @@ class NounouController extends Controller
             ->getRepository('CharlesBundle:Nounou')
             ->find($id);
 
+        // if (!$nounou) {
+        //     throw $this->createNotFoundException(
+        //         'Il n\'y a pas de nounou ayant l\'id ' . $id
+        //     );
+        // }
+
         if (!$nounou) {
-            throw $this->createNotFoundException(
-                'There are no nounous with the following id: ' . $id
+            $Erreur = 'Il n\'y a pas de nounou ayant l\'id ' . $id;
+            return $this->render(
+                'nounou/view.html.twig',
+                array('Erreur' => $Erreur)
             );
         }
 
+        // On met la valeur de IsLogin sur true entant donné que tout le monde est login tout le temps
+        $IsLogin = true; 
+
         return $this->render(
             'nounou/view.html.twig',
-            array('nounou' => $nounou)
+            array('nounou' => $nounou, 'IsLogin' => $IsLogin)
         );
     }
 
