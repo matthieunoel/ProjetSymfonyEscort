@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>nounou.esc.com</title>
+    <link rel="stylesheet" type="text/css" href="../css/master.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="TextCadre">
+                <h1>Nounou.esc.com</h1>
+                <h3>La branche nounou de esc.com</h3>
+            </div>
+            <div class="CircleForPic">
+                <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
+            </div>
+        </header>
+        <div class="BottomLine"></div>
+        <section>
+            {% if Erreur %}
+            <h1 class="Erreur"> Erreur : {{ Erreur }} </h1>
+            {% else %}
+            <div id="ProfilHeader">
+                <h4>{{ nounou.nounouNom | upper }}  {{ nounou.nounouPrenom }}</h4>
+                <div class="CircleForPic" id="SpecialCircle">
+                    <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
+                </div>
+            </div>
+            <div class="ProfilContainer">
+                <div id="ColumnLeft">
+                    <div id="TopDesc">
+                        <p>Un homme né le {{ nounou.nounouDateNaiss | date('d-m-Y') }}.</p>
+                        <p>Demande une paye de {{ nounou.nounouTarif }} euros/h</p>
+                    </div>
+                    <div id="Desc">
+                        {{ nounou.nounouDesc }}
+                    </div>
+                </div>
+                <div id="ColumnRight">
+                    <div id="Contact">
+                        <h4>
+                            Telephone :
+                        </h4>
+                        <p>
+                            {{ nounou.nounouTelPro }}
+                        </p>
+                        <h4>
+                            Adresse mail :
+                        </h4>
+                        <p>
+                            {{ nounou.nounouMail }}
+                        </p>
+                    </div>
+                    <p>
+                        <a href="/montrer-nounous">Voir la liste des nounous</a>
+                    </p>
+                    {% if IsLogin %}
+                        <p>
+                            <a href={{ ("/modif-nounou/" ~ nounou.id) | trans }}>Modifier le compte</a>
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        </section>
+        <div class="BottomLine"></div>
+    </main>
+</body>
+
+</html>
