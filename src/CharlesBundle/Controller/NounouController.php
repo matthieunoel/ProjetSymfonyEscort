@@ -93,6 +93,7 @@ class NounouController extends Controller
             ->add('nounouAdresse', TextType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('nounouTelPro', TelType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('nounouTelPerso', TelType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('nounouPhoto', TextType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('save', SubmitType::class, ['label' => 'Mettre a jour', 'attr' => ['class' => 'Button']])
             ->getForm();
 
@@ -147,6 +148,7 @@ class NounouController extends Controller
             ->add('nounouAdresse', TextType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('nounouTelPro', TelType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('nounouTelPerso', TelType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('nounouPhoto', TextType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('save', SubmitType::class, ['label' => 'Valider', 'attr' => ['class' => 'Button']])
             ->getForm(); 
 

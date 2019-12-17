@@ -27,7 +27,8 @@
                 <table>
                     <thead>
                         <tr>
-                        <th class="LeftThOrTd">Nom</th>
+                        <th class="LeftThOrTd">Photo</th>
+                        <th>Nom</th>
                         {# <th>Nom</th> #}
                         <th>Age</th>
                         <th>Tarif</th>
@@ -40,7 +41,18 @@
                         <tr>
                             {# <td class="LeftThOrTd">{{ nounou.nounouPrenom }}</td> #}
                             {# <td>{{ nounou.nounouNom | upper }}</td> #}
-                            <td class="LeftThOrTd"> {{ nounou.nounouPrenom }} {{ nounou.nounouNom | upper }} </td>
+                            <td class="LeftThOrTd">
+                                {% if nounou.nounouPhoto != '' %}
+                                <div class="CircleForPic" id="AvatarCircle">
+                                        <img src={{ nounou.nounouPhoto }} alt="Avatar de la nounou">
+                                </div>
+                                {% else %}
+                                <div class="CircleForPic ReversePic" id="AvatarCircle">
+                                        <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
+                                </div>
+                                {% endif %}
+                            </td>
+                            <td> {{ nounou.nounouPrenom }} {{ nounou.nounouNom | upper }} </td>
                             <td>{{ nounou.nounouDateNaiss | date('Y-m-d') }}</td>
                             <td>{{ nounou.nounouTarif }} euros</td>
                             <td  class="RightLink"><a href="voir-nounou/{{ nounou.id }}">Voir le profil</a></td>

@@ -25,9 +25,15 @@
             {% else %}
             <div id="ProfilHeader">
                 <h4>{{ nounou.nounouNom | upper }}  {{ nounou.nounouPrenom }}</h4>
-                <div class="CircleForPic" id="SpecialCircle">
-                    <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
+                {% if nounou.nounouPhoto != '' %}
+                <div class="CircleForPic" id="AvatarCircle">
+                        <img src={{ nounou.nounouPhoto }} alt="Avatar de la nounou">
                 </div>
+                {% else %}
+                <div class="CircleForPic ReversePic" id="AvatarCircle">
+                        <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
+                </div>
+                {% endif %}
             </div>
             <div class="ProfilContainer">
                 <div id="ColumnLeft">
