@@ -27,7 +27,7 @@
                 <h4>{{ nounou.nounouNom | upper }}  {{ nounou.nounouPrenom }}</h4>
                 {% if nounou.nounouPhoto != '' %}
                 <div class="CircleForPic" id="AvatarCircle">
-                        <img src={{ nounou.nounouPhoto }} alt="Avatar de la nounou">
+                        <img src={{ nounou.nounouPhoto }} alt="{{ 'Avatar de ' ~ nounou.nounouPrenom ~ ' ' ~ nounou.nounouNom | upper }}">
                 </div>
                 {% else %}
                 <div class="CircleForPic ReversePic" id="AvatarCircle">
