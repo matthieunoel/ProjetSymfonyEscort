@@ -38,8 +38,32 @@
             <div class="ProfilContainer">
                 <div id="ColumnLeft">
                     <div id="TopDesc">
-                        <p>Un homme né le {{ nounou.nounouDateNaiss | date('d-m-Y') }}.</p>
-                        <p>Demande une paye de {{ nounou.nounouTarif }} euros/h</p>
+                        <p>
+                        {% if nounou.nounouSexe == 1 %}
+                        Un homme
+                        {% elseif nounou.nounouSexe == 2 %}
+                        Une femme
+                        {% elseif nounou.nounouSexe == 3 %}
+                        Un hélicoptère 2 Kombat
+                        {% elseif nounou.nounouSexe == 4 %}
+                        Un asexué
+                        {% elseif nounou.nounouSexe == 5 %}
+                        Un intersexué
+                        {% elseif nounou.nounouSexe == 6 %}
+                        Un code wifi
+                        {% elseif nounou.nounouSexe == 7 %}
+                        Un raptor
+                        {% elseif nounou.nounouSexe == 8 %}
+                        Une personne ne préférant pas parler de son sexe
+                        {% elseif nounou.nounouSexe == 10 %}
+                        Des cailloux
+                        {% elseif nounou.nounouSexe == 0 %}
+                        Un autre
+                        {% else %}
+                        Un etre vivant
+                        {% endif %}
+                         ayant {{ date('now').diff((nounou.nounouDateNaiss)).format('%y ans') }}.</p>
+                        <p>Demande une paye de {{ nounou.nounouTarif }} euros/h.</p>
                     </div>
                     <div id="Desc">
                         {{ nounou.nounouDesc }}
