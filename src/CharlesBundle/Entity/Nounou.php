@@ -66,7 +66,7 @@ class Nounou
     /**
      * @var string
      *
-     * @ORM\Column(name="nounou_desc", type="string", length=1020)
+     * @ORM\Column(name="nounou_desc", type="string", length=4096)
      */
     private $nounouDesc;
 
@@ -94,7 +94,7 @@ class Nounou
     /**
      * @var string
      *
-     * @ORM\Column(name="nounou_photo", type="string", length=255, nullable=true)
+     * @ORM\Column(name="nounou_photo", type="string", length=2048, nullable=true)
      */
     private $nounouPhoto;
 

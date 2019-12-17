@@ -87,7 +87,15 @@ class NounouController extends Controller
             ])
             ->add('nounouMdp', PasswordType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('nounouMail', EmailType::class, ['attr' => ['class' => 'TextArea'],])
-            ->add('nounouDateNaiss', DateType::class, ['attr' => ['class' => 'DateArea'],])
+            ->add('nounouDateNaiss', DateType::class, [
+                'attr' => [
+                    'class' => 'DateArea'
+                ],
+                'widget' => 'choice',
+                'years' => range(date('Y') - 100, date('Y')),
+                'months' => range(1, 12),
+                'days' => range(1, 31)
+            ])
             ->add('nounouTarif', TextType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('nounouDesc', TextareaType::class, ['attr' => ['class' => 'TextBoxArea'],])
             ->add('nounouAdresse', TextType::class, ['attr' => ['class' => 'TextArea'],])
@@ -142,7 +150,14 @@ class NounouController extends Controller
                 ],
             ])
             ->add('nounouMail', EmailType::class, ['attr' => ['class' => 'TextArea'],])
-            ->add('nounouDateNaiss', DateType::class, ['attr' => ['class' => 'DateArea'],])
+            ->add('nounouDateNaiss', DateType::class, ['attr' => [
+                'class' => 'DateArea'
+            ],
+                'widget' => 'choice',
+                'years' => range(date('Y') - 100, date('Y')),
+                'months' => range(1, 12),
+                'days' => range(1, 31)
+            ])
             ->add('nounouTarif', TextType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('nounouDesc', TextareaType::class, ['attr' => ['class' => 'TextBoxArea'],])
             ->add('nounouAdresse', TextType::class, ['attr' => ['class' => 'TextArea'],])
