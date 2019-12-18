@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>nounou.esc.com</title>
+    <link rel="stylesheet" type="text/css" href="../css/master.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="TextCadre">
+                <a href="/" ><h1>Nounou.esc.com</h1></a>
+                <h3>La branche client de esc.com</h3>
+            </div>
+            <div class="CircleForPic">
+                <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
+            </div>
+        </header>
+        <div class="BottomLine"></div>
+        <section>
+            {% if Erreur is defined %}
+            <h1 class="Erreur"> Erreur : {{ Erreur }} </h1>
+            {% else %}
+            <div id="ProfilHeader">
+                <h4>{{ client.clientNom | upper }}  {{ client.clientPrenom }}</h4>
+                <div class="CircleForPic ReversePic" id="AvatarCircle">
+                        <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
+                </div>
+            </div>
+            <div class="ProfilContainer">
+                <div id="ColumnLeft">
+                    <div id="TopDesc">
+                        <p>
+                        {% if client.clientSexe == 1 %}
+                        Un homme
+                        {% elseif client.clientSexe == 2 %}
+                        Une femme
+                        {% elseif client.clientSexe == 3 %}
+                        Une Licorne
+                        {% elseif client.clientSexe == 4 %}
+                        Moi
+                        {% elseif client.clientSexe == 5 %}
+                        Personne
+                        {% elseif client.clientSexe == 6 %}
+                        Un Framework
+                        {% elseif client.clientSexe == 7 %}
+                        De Sexe inexistant dans cet univers tridimensionnel
+                        {% elseif client.clientSexe == 8 %}
+                        Non Binaire
+                        {% elseif client.clientSexe == 0 %}
+                        Un autre
+                        {% else %}
+                        Un etre vivant
+                        {% endif %}
+                        </p>
+                        <p>
+                            Veut garder son Bambin " " .
+                        </p>
+                    </div>
+                </div>
+                <div id="ColumnRight">
+                    <div id="Contact">
+                        <h4>
+                            Telephone :
+                        </h4>
+                        <p>
+                            {{ client.clientTel }}
+                        </p>
+                        <h4>
+                            Adresse mail :
+                        </h4>
+                        <p>
+                            {{ client.clientMail }}
+                        </p>
+                    </div>
+                    <p>
+                        <a href="/montrer-nounous">Voir la liste des nounous</a>
+                    </p>
+                    {% if IsLogin %}
+                        <p>
+                            <a href={{ ("/modif-client/" ~ client.id) | trans }}>Modifier le compte</a>
+                        </p>
+                        <p>
+                            <a href={{("/creer-bambin/" ~ client.id) | trans }}>Ajouter un Bambin</a>
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        </section>
+        <div class="BottomLine"></div>
+    </main>
+</body>
+
+</html>
