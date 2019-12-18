@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>nounou.esc.com</title>
+    <link rel="stylesheet" type="text/css" href="../css/master.css">
+    
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="TextCadre">
+                <a href="/"><h1>Nounou.esc.com</h1></a>
+                <h3>La branche nounou de esc.com</h3>
+            </div>
+            <div class="CircleForPic">
+                <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
+            </div>
+        </header>
+        <div class="BottomLine"></div>
+        <section>
+            <h4>Liste des surveillance.</h4>
+            
+            {% if Erreur is defined %}
+            <h1 class="Erreur"> Erreur : {{ Erreur }} </h1>
+            {% else %}
+                {% for surveillance in surveillances %}
+                    {% if %}
+                    <tr>
+                        <td class="LeftThOrTd">
+                            {% if surveillance.nounouPhoto != '' %}
+                            <div class="CircleForPic" id="AvatarCircle">
+                                    <img src={{ surveillance.nounouPhoto }} alt="{{ 'Avatar de ' ~ surveillance.nounouPrenom ~ ' ' ~ surveillance.nounouNom | upper }}">
+                            </div>
+                            {% else %}
+                            <div class="CircleForPic ReversePic" id="AvatarCircle">
+                                <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
+                            </div>
+                            {% endif %}
+                        </td>
+                        <td> {{ surveillance.nounouPrenom }} {{ surveillance.nounouNom | upper }} </td>
+                        <td>{{ surveillance.nounouDateNaiss | date('Y-m-d') }}</td>
+                        <td>{{ surveillance.nounouTarif }} euros</td>
+                        <td  class="RightLink"><a href="voir-nounou/{{ surveillance.id }}">Voir le profil</a></td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+
+        </section>
+        <div class="BottomLine"></div>
+    </main>
+</body>
+
+</html>
