@@ -42,6 +42,10 @@ header .TextCadre {
     justify-content: center;
 }
 
+header a {
+    text-decoration: none;
+}
+
 h1 {
     margin: 0;
 }
@@ -202,6 +206,14 @@ table {
 
 .RightThOrTd {
     border-right: black solid 2px;
+}
+
+.InvisibleLeftThOrTd {
+    font-weight: bold;
+    border: none;
+    border-left: black solid 1px;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
 }
 
 .RightInvisibleTh {

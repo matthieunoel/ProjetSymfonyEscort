@@ -71,8 +71,10 @@ class SurveillanceController extends Controller
 
         // $em-> ($surveillance);
         $surveillance->setSrvValide(true);
+        $nounou = $em->getRepository('CharlesBundle:Nounou')->find($surveillance->getNounou());
+
         $em->flush();
 
-        return $this->redirect("/validation-srv/ {$id}");
+        return $this->redirect("/validation-srv/{$nounou->getId()}");
     }
 }

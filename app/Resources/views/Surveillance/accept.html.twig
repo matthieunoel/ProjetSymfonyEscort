@@ -21,12 +21,11 @@
         </header>
         <div class="BottomLine"></div>
         <section>
-            <h4>Liste des surveillance de {{ nounou.nounouPrenom | upper ~ " " ~ nounou.nounouNom }}.</h4>
-            
             {% if Erreur is defined %}
             <h1 class="Erreur"> Erreur : {{ Erreur }} </h1>
             <a href="javascript:history.go(-1)">Retourner en arrière</a>
             {% else %}
+            <h4>Liste des surveillance de {{ nounou.nounouPrenom | upper ~ " " ~ nounou.nounouNom }}.</h4>
                 <table>
                     <thead>
                         <tr>
@@ -46,7 +45,7 @@
                                 : {{ surveillance.srvDuree | date('Y-m-d') }} </td>
                             <td> {{ surveillance.srvLieu }} </td>
                             {% if surveillance.srvValide %}
-                            <td style="font-weight: bold; border: none; border-left: black solid 1px; background-color: rgba(0, 0, 0, 0);"> Validé </td>
+                            <td class="InvisibleLeftThOrTd"> Validé <span style="color: green; font-size: 1.5em;">✓<span> </td>
                             {% else %}
                             <td  class="RightLink"><a href="/suppr-srv/{{ surveillance.id }}">Refuser</a></td>
                             <td  class="RightLink NoBorder"><a href="/accepter-srv/{{ surveillance.id }}">Accepter</a></td>
