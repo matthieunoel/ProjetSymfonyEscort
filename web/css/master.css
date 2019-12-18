@@ -1,0 +1,420 @@
+/* --- GENERAL ---*/
+
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial,Helvetica,sans-serif;
+    padding: 0;
+    margin: 0;
+    background-image: url(https://previews.123rf.com/images/nsit0108/nsit01081811/nsit0108181104361/127729634-heart-candy-box-pattern-seamless-repeat-background-for-any-web-design.jpg);
+    background-size: 500px auto;
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+a {
+    color: black;
+}
+
+main {
+    width: 50vw;
+    margin-left: 25vw;
+    margin-top: 0;
+    margin-bottom: 2vh;
+    background-color: #F3AED9;
+    padding: 0;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    padding: 1.2em 1em;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: space-between;
+}
+
+header .TextCadre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+h3{
+    margin: 0;
+}
+
+.CircleForPic {
+    height: 10vh;
+    width: 10vh;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.CircleForPic img {
+    height: 10vh;
+    width: auto;
+}
+
+.BottomLine {
+   background-color: rgba(0, 0, 0, 0.1);
+   height: 5px;
+   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin: 1em;
+    padding: 0.7vh 0 1.7vh 0;
+}
+
+section h4 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    padding-left: 0.7em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5vw;
+}
+
+form .TextArea {
+    border: none;
+    border-bottom: black solid 2px;
+    color: black;
+    background-color: rgba(0, 0, 0, 0);
+    /* margin: 0.7em; */
+    font-size: 1em;
+    padding-left: 0.4em;
+    padding-bottom: 0.2em;
+    width: calc(100% - 0.4em);
+}
+
+form .TextBoxArea {
+    width: calc(100% - 0.7em);
+    height: 25vh;
+    resize: none;
+    font-size: 1em;
+    border: none;
+    border-bottom: black solid 2px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.75);
+    padding-left: 0.2em;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+form .TextBoxArea:focus {
+    outline: none;
+}
+
+form .Button {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    text-align: right;
+    padding-right: 1em;
+    color: black;
+    font-size: 1.05em;
+    font-weight: bold;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+form .Button:hover {
+    filter: invert(100%);
+}
+
+input:focus {
+    outline: none;
+}
+
+::placeholder {
+    color: black;
+    opacity: 1;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li a {
+    margin: 0.7em 0.7em 0 0.7em;
+    display: flex;
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.5vw;
+    text-decoration: none;
+    padding: 0.7em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+li a:hover {
+    filter: invert(100%);
+}
+
+h1.Erreur {
+    /* color: b; */
+    width: 100%;
+    text-align: center;
+    margin: 5vh 0;
+}
+
+
+/* --- MONTRER-TOUT --- */
+
+th, td {
+    margin: 0;
+    padding: 0.7em;
+    border: black solid 1px;
+    background-color: rgba(255, 255, 255, 0.7);
+    /* display: inline-block; */
+}
+
+th {
+    text-align: center;
+    vertical-align: text-top;
+    border-top: black solid 2px;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0px;
+}
+
+.LeftThOrTd {
+    border-left: black solid 2px;
+}
+
+.RightThOrTd {
+    border-right: black solid 2px;
+}
+
+.RightInvisibleTh {
+    border: none;
+    border-left: black solid 1px;
+    /* border-bottom: black solid 1px; */
+    background-color: rgba(0, 0, 0, 0);
+}
+
+td.RightLink {
+    border: none;
+    border-left: black solid 1px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+td.RightLink a {
+    /* margin: 0.7em 0.7em 0 0.7em; */
+    display: flex;
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.5vw;
+    text-decoration: none;
+    padding: 0.7em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+td.RightLink a:hover {
+    filter: invert(100%);
+}
+
+/* --- EDIT --- */
+
+/* form a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+} */
+
+form th, form td {
+    /* border-bottom: 1px rgba(0, 0, 0, 0.75) solid; */
+    margin: 0;
+    padding: 0.7em;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+form th {
+    text-align: right;
+    vertical-align: text-top;
+}
+
+form table {
+    border-collapse: separate;
+    border-spacing: 0px;
+}
+
+form .ChoiceArea, .DateArea select {
+    background-color: rgba(255, 255, 255, 0.75);
+    border: none;
+    outline: none;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+form .ChoiceArea option, .DateArea select option {
+    background-color: rgba(243, 174, 217, 0.5);
+}
+
+form .ChoiceArea:hover, .DateArea select:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+form a {
+    text-decoration: none;
+    padding: 1px 6px 1px 6px;
+}
+
+/* --- VIEW --- */
+
+#ColumnRight {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#ColumnLeft {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+
+#TopDesc {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.5vw;
+    padding: 0.7em;
+}
+
+#Desc {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0.7em;
+    margin-top: 0.7em;
+    border-radius: 0.5vw;
+}
+
+#Contact {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0.7em;
+    flex: 1;
+    margin: 0 0.7em 0 0.7em;
+    border-radius: 0.5vw;
+}
+
+#Contact h4 {
+    font-size: 1em;
+    margin: 0 0 0.2em 0;
+}
+
+#Contact p {
+    margin-bottom: 1em;
+}
+
+.ProfilContainer a {
+    margin: 0.7em 0.7em 0 0.7em;
+    display: flex;
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 0.5vw;
+    text-decoration: none;
+    padding: 0.7em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.ProfilContainer a:hover {
+    filter: invert(100%);
+}
+
+.ProfilContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.ProfilContainer p {
+    margin: 0;
+    padding: 0;
+}
+
+#ProfilHeader {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1em;
+}
+
+#AvatarCircle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#AvatarCircle img {
+    display: block;
+    margin: auto;
+}
+
+.ReversePic {
+    -webkit-filter: invert(99%);
+    filter: invert(99%);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+}
+
+#ColumnRight {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+#ColumnLeft {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+
+/* #Desc {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0.7em;
+    margin-top: 0.7em;
+    border-radius: 0.5vw;
+}
+
+#Contact {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0.7em;
+    flex: 1;
+    margin: 0.7em 0.7em 0 0.7em;
+    border-radius: 0.5vw;
+}
+
+#Contact h4 {
+    font-size: 1em;
+    margin: 0 0 0.2em 0;
+}
+
+#Contact p {
+    margin-bottom: 1em;
+} */

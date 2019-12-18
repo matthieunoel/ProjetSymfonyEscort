@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>nounou.esc.com</title>
+    <link rel="stylesheet" type="text/css" href="../css/master.css">
+    
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="TextCadre">
+                <h1>Nounou.esc.com</h1>
+                <h3>La branche nounou de esc.com</h3>
+            </div>
+            <div class="CircleForPic">
+                <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
+            </div>
+        </header>
+        <div class="BottomLine"></div>
+        <section>
+            <h4>Liste des nounous</h4>
+            
+            {% if nounous is not empty %}
+                <table>
+                    <thead>
+                        <tr>
+                        <th class="LeftThOrTd">Photo</th>
+                        <th>Nom</th>
+                        {# <th>Nom</th> #}
+                        <th>Age</th>
+                        <th>Tarif</th>
+                        <th class="RightInvisibleTh"></th>
+                        {# <th>Voir le profil</th> #}
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for nounou in nounous %}
+                        <tr>
+                            {# <td class="LeftThOrTd">{{ nounou.nounouPrenom }}</td> #}
+                            {# <td>{{ nounou.nounouNom | upper }}</td> #}
+                            <td class="LeftThOrTd">
+                                {% if nounou.nounouPhoto != '' %}
+                                <div class="CircleForPic" id="AvatarCircle">
+                                        <img src={{ nounou.nounouPhoto }} alt="{{ 'Avatar de ' ~ nounou.nounouPrenom ~ ' ' ~ nounou.nounouNom | upper }}">
+                                </div>
+                                {% else %}
+                                <div class="CircleForPic ReversePic" id="AvatarCircle">
+                                        <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
+                                </div>
+                                {% endif %}
+                            </td>
+                            <td> {{ nounou.nounouPrenom }} {{ nounou.nounouNom | upper }} </td>
+                            <td>{{ nounou.nounouDateNaiss | date('Y-m-d') }}</td>
+                            <td>{{ nounou.nounouTarif }} euros</td>
+                            <td  class="RightLink"><a href="voir-nounou/{{ nounou.id }}">Voir le profil</a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>Aucune nounou trouvée.</p>
+            {% endif %}
+
+        </section>
+        <div class="BottomLine"></div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>nounou.esc.com</title>
+    <link rel="stylesheet" type="text/css" href="../css/master.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="TextCadre">
+                <a href="/" ><h1>Nounou.esc.com</h1></a>
+                <h3>La branche nounou de esc.com</h3>
+            </div>
+            <div class="CircleForPic">
+                <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
+            </div>
+        </header>
+        <div class="BottomLine"></div>
+        <section>
+            {% if Erreur is defined %}
+            <h1 class="Erreur"> Erreur : {{ Erreur }} </h1>
+            {% else %}
+            <div id="ProfilHeader">
+                <h4>{{ nounou.nounouNom | upper }}  {{ nounou.nounouPrenom }}</h4>
+                {% if nounou.nounouPhoto != '' %}
+                <div class="CircleForPic" id="AvatarCircle">
+                        <img src={{ nounou.nounouPhoto }} alt="{{ 'Avatar de ' ~ nounou.nounouPrenom ~ ' ' ~ nounou.nounouNom | upper }}">
+                </div>
+                {% else %}
+                <div class="CircleForPic ReversePic" id="AvatarCircle">
+                        <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
+                </div>
+                {% endif %}
+            </div>
+            <div class="ProfilContainer">
+                <div id="ColumnLeft">
+                    <div id="TopDesc">
+                        <p>
+                        {% if nounou.nounouSexe == 1 %}
+                        Un homme
+                        {% elseif nounou.nounouSexe == 2 %}
+                        Une femme
+                        {% elseif nounou.nounouSexe == 3 %}
+                        Un hélicoptère 2 Kombat
+                        {% elseif nounou.nounouSexe == 4 %}
+                        Un asexué
+                        {% elseif nounou.nounouSexe == 5 %}
+                        Un intersexué
+                        {% elseif nounou.nounouSexe == 6 %}
+                        Un code wifi
+                        {% elseif nounou.nounouSexe == 7 %}
+                        Un raptor
+                        {% elseif nounou.nounouSexe == 8 %}
+                        Une personne ne préférant pas parler de son sexe
+                        {% elseif nounou.nounouSexe == 10 %}
+                        Des cailloux
+                        {% elseif nounou.nounouSexe == 0 %}
+                        Un autre
+                        {% else %}
+                        Un etre vivant
+                        {% endif %}
+                         ayant {{ date('now').diff((nounou.nounouDateNaiss)).format('%y ans') }}.</p>
+                        <p>Demande une paye de {{ nounou.nounouTarif }} euros/h.</p>
+                    </div>
+                    <div id="Desc">
+                        {{ nounou.nounouDesc }}
+                    </div>
+                </div>
+                <div id="ColumnRight">
+                    <div id="Contact">
+                        <h4>
+                            Telephone :
+                        </h4>
+                        <p>
+                            {{ nounou.nounouTelPro }}
+                        </p>
+                        <h4>
+                            Adresse mail :
+                        </h4>
+                        <p>
+                            {{ nounou.nounouMail }}
+                        </p>
+                    </div>
+                    <p>
+                        <a href="/montrer-nounous">Voir la liste des nounous</a>
+                    </p>
+                    {% if IsLogin %}
+                        <p>
+                            <a href={{ ("/modif-nounou/" ~ nounou.id) | trans }}>Modifier le compte</a>
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        </section>
+        <div class="BottomLine"></div>
+    </main>
+</body>
+
+</html>

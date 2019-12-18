@@ -1,0 +1,108 @@
+ <!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>nounou.esc.com</title>
+    <link rel="stylesheet" type="text/css" href="../css/master.css">
+    
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="TextCadre">
+                <a href="/" ><h1>Nounou.esc.com</h1></a>
+                <h3>La branche nounou de esc.com</h3>
+            </div>
+            <div class="CircleForPic">
+                <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
+            </div>
+        </header>
+        <div class="BottomLine"></div>
+        <section>
+
+            {% if Erreur is defined %}
+            <h1 class="Erreur"> Erreur : {{ Erreur }} </h1>
+            {% else %}
+
+            <h4>Compte nounou</h4>
+            
+            {{ form_start(form) }}
+
+                <table>
+                <tbody>
+                    <tr>
+                    <th>Mail:</th>
+                    <td>{{ form_widget(form.nounouMail) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Mot de passe:</th>
+                    <td>{{ form_widget(form.nounouMdp) }}</td>
+                    </tr>
+                    <tr>
+                    <tr>
+                    <th>Lien de la photo:</th>
+                    <td>{{ form_widget(form.nounouPhoto) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Nom:</th>
+                    <td>{{ form_widget(form.nounouNom) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Prenom:</th>
+                    <td>{{ form_widget(form.nounouPrenom) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Sexe:</th>
+                    <td>
+                    {{ form_widget(form.nounouSexe) }}
+                    </td>
+                    </tr>
+                    <tr>
+                    <th>Date de naissance:</th>
+                    <td>{{ form_widget(form.nounouDateNaiss) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Tarif:</th>
+                    <td>{{ form_widget(form.nounouTarif) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Desc:</th>
+                    <td>{{ form_widget(form.nounouDesc) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Adresse:</th>
+                    <td>{{ form_widget(form.nounouAdresse) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Telephone pro:</th>
+                    <td>{{ form_widget(form.nounouTelPro) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Telephone personnel:</th>
+                    <td>{{ form_widget(form.nounouTelPerso) }}</td>
+                    </tr>
+                    <tr>
+                    <th></th>
+                    <td>
+                        {{ form_widget(form.save) }} 
+                        {% if app.request.pathinfo | slice(1, 5) == 'modif' %} 
+                            <a href={{ ("/suppr-nounou/" ~ id) | trans }} class="Button">Supprimer</a>
+                        {% endif %}
+                    </td>
+                    </tr>
+
+                </tbody>
+                </table>
+
+            {{ form_end(form) }} 
+
+            {% endif %}
+
+        </section>
+        <div class="BottomLine"></div>
+    </main>
+</body>
+
+</html>
