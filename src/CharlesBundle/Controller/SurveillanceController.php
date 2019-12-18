@@ -24,7 +24,7 @@ namespace CharlesBundle\Controller;
 
 class SurveillanceController extends Controller
 {
-    
+
     /**
      * @Route("/valider-srv/{id}")
      */
@@ -48,7 +48,28 @@ class SurveillanceController extends Controller
 
         return $this->render(
             'Surveillance/accept.html.twig',
-            array('nounou' => $nounou, 'surveillances' => $surveillances)
+            array('nounou' => $nounou, 'surveillances' => $surveillances, 'IdUrl' => $id)
         );
+    }
+
+    /**
+     * @Route("/accepter-srv/{id}")
+     */
+    public function supprAction($id)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $nounou = $em->getRepository('CharlesBundle:Nounou')->find($id);
+
+        if (!$nounou) {
+            throw $this->createNotFoundException(
+                'There are no nounous with the following id: ' . $id
+            );
+        }
+
+        $em->remove($nounou);
+        $em->flush();
+
+        return $this->redirect('/valider-srv' + $);
     }
 }

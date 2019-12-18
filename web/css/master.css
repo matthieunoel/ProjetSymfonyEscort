@@ -232,6 +232,10 @@ td.RightLink a {
     font-weight: bold;
 }
 
+.NoBorder {
+    border: none !important;
+}
+
 td.RightLink a:hover {
     filter: invert(100%);
 }
