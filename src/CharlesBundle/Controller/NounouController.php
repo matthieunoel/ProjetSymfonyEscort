@@ -247,4 +247,12 @@ class NounouController extends Controller
         return $this->redirect('/menu-nounou');
     }
 
+    /**
+     * @Route("/menu-nounou")
+     */
+    public function menuAction()
+    {
+        return $this->render('nounou/menu.html.twig');
+    }
+
 }
