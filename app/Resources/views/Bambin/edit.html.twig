@@ -1,0 +1,79 @@
+ <!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>bambin.esc.com</title>
+    <link rel="stylesheet" type="text/css" href="../css/master.css">
+    
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="TextCadre">
+                <h1>Bambin.esc.com</h1>
+                <h3>La branche bambin de esc.com</h3>
+            </div>
+            <div class="CircleForPic">
+                <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
+            </div>
+        </header>
+        <div class="BottomLine"></div>
+        <section>
+
+            {% if Erreur is defined %}
+            <h1 class="Erreur"> Erreur : {{ Erreur }} </h1>
+            {% else %}
+
+            <h4>Compte bambin</h4>
+            
+            {{ form_start(form) }}
+
+                <table>
+                <tbody>
+                    <tr>
+                    <th>Nom:</th>
+                    <td>{{ form_widget(form.bambinNom) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Prenom:</th>
+                    <td>{{ form_widget(form.bambinPrenom) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Sexe:</th>
+                    <td>
+                    {{ form_widget(form.bambinSexe) }}
+                    </td>
+                    </tr>
+                    <tr>
+                    <th>Date de naissance:</th>
+                    <td>{{ form_widget(form.bambinDateNaiss) }}</td>
+                    </tr>
+                    <tr>
+                    <th>Details:</th>
+                    <td>{{ form_widget(form.bambinDetails) }}</td>
+                    </tr>
+                    <tr>
+                    <th></th>
+                    <td>
+                        {{ form_widget(form.save) }} 
+                        {% if app.request.pathinfo | slice(1, 5) == 'modif' %} 
+                            <a href={{ ("/suppr-bambin/" ~ id) | trans }} class="Button">Supprimer</a>
+                        {% endif %}
+                    </td>
+                    </tr>
+
+                </tbody>
+                </table>
+
+            {{ form_end(form) }} 
+
+            {% endif %}
+
+        </section>
+        <div class="BottomLine"></div>
+    </main>
+</body>
+
+</html>
