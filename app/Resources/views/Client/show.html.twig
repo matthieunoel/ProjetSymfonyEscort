@@ -12,8 +12,8 @@
     <main>
         <header>
             <div class="TextCadre">
-                <a href="/" ><h1>Nounou.esc.com</h1></a>
-                <h3>La branche client de esc.com</h3>
+                <a href="/" ><h1>Nounou.esc.com</h1>
+                <h3>La branche client de esc.com</h3></a>
             </div>
             <div class="CircleForPic">
                 <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
@@ -36,15 +36,6 @@
                             {# <td class="LeftThOrTd">{{ client.clientPrenom }}</td> #}
                             {# <td>{{ client.clientNom | upper }}</td> #}
                             <td class="LeftThOrTd">
-                                {% if client.clientPhoto != '' %}
-                                <div class="CircleForPic" id="AvatarCircle">
-                                        <img src={{ client.clientPhoto }} alt="{{ 'Avatar de ' ~ client.clientPrenom ~ ' ' ~ client.clientNom | upper }}">
-                                </div>
-                                {% else %}
-                                <div class="CircleForPic ReversePic" id="AvatarCircle">
-                                        <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
-                                </div>
-                                {% endif %}
                             </td>
                             <td> {{ client.clientPrenom }} {{ client.clientNom | upper }} </td>
                             <td  class="RightLink"><a href="voir-client/{{ client.id }}">Voir le profil</a></td>

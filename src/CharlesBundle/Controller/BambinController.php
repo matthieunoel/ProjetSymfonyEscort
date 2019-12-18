@@ -114,9 +114,9 @@ class BambinController extends Controller
     }
 
     /**
-     * @Route("/creer-bambin")
+     * @Route("/creer-bambin/{id}")
      */
-    public function createAction(Request $request)
+    public function createAction(Request $request, $id)
     {
 
         $bambin = new bambin();
