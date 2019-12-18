@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>bambin.esc.com</title>
+    <link rel="stylesheet" type="text/css" href="../css/master.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="TextCadre">
+                <h1>bambin.esc.com</h1>
+                <h3>La branche bambin de esc.com</h3>
+            </div>
+            <div class="CircleForPic">
+                <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
+            </div>
+        </header>
+        <div class="BottomLine"></div>
+        <section>
+            {% if Erreur is defined %}
+            <h1 class="Erreur"> Erreur : {{ Erreur }} </h1>
+            {% else %}
+            <div id="ProfilHeader">
+                <h4>{{ bambin.bambinNom | upper }}  {{ bambin.bambinPrenom }}</h4>
+            </div>
+            <div class="ProfilContainer">
+                <div id="ColumnLeft">
+                    <div id="TopDesc">
+                        <p>
+                        {% if bambin.bambinSexe == 1 %}
+                        Un homme
+                        {% elseif bambin.bambinSexe == 2 %}
+                        Une femme
+                        {% elseif bambin.bambinSexe == 3 %}
+                        Un hélicoptère 2 Kombat
+                        {% elseif bambin.bambinSexe == 4 %}
+                        Un asexué
+                        {% elseif bambin.bambinSexe == 5 %}
+                        Un intersexué
+                        {% elseif bambin.bambinSexe == 6 %}
+                        Un code wifi
+                        {% elseif bambin.bambinSexe == 7 %}
+                        Un raptor
+                        {% elseif bambin.bambinSexe == 8 %}
+                        Une personne ne préférant pas parler de son sexe
+                        {% elseif bambin.bambinSexe == 10 %}
+                        Des cailloux
+                        {% elseif bambin.bambinSexe == 0 %}
+                        Un autre
+                        {% else %}
+                        Un etre vivant
+                        {% endif %}
+                         ayant {{ date('now').diff((bambin.bambinDateNaiss)).format('%y ans') }}.</p>
+                    <div id="Details">
+                        {{ bambin.bambinDetails }}
+                    </div>
+					</div>
+                </div>
+                <div id="ColumnRight">
+                    <p>
+                        <a href="/montrer-bambins">Voir la liste des bambins</a>
+                    </p>
+                    {% if IsLogin %}
+                        <p>
+                            <a href={{ ("/modif-bambin/" ~ bambin.id) | trans }}>Modifier le compte</a>
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        </section>
+        <div class="BottomLine"></div>
+    </main>
+</body>
+
+</html>
