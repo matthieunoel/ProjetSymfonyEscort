@@ -18,6 +18,11 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 
+use Doctrine\ORM\Mapping\Id;
+use Symfony\Component\Form\Extension\Core\Type\ButtonType;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+
 class ClientController extends Controller
 {
     
@@ -42,60 +47,49 @@ class ClientController extends Controller
      * @Route("/modif-client")
      */
 
-    public function modifAction()
-    {
-
-        $clients = $this->getDoctrine()
-            ->getRepository('CharlesBundle:Client')
-            ->findAll();
-
-        return $this->render(
-            'Client/show.html.twig',
-            array('clients' => $clients)
-        );
-    }
-
-    /**
-     * @Route("/update-client/{id}")
-     */
-    public function updateAction(Request $request, $id)
+    public function updateAction()
     {
 
         $em = $this->getDoctrine()->getManager();
         $client = $em->getRepository('CharlesBundle:Client')->find($id);
-
+        
         if (!$client) {
-            throw $this->createNotFoundException(
-                'There is no client with the following id: ' . $id
+            $Erreur = 'Il n\'y a pas de client ayant l\'id ' . $id;
+            return $this->render(
+                'client/view.html.twig',
+                array('Erreur' => $Erreur)
             );
         }
+   
 
         $form = $this->createFormBuilder($client)
-            ->add('clientNom', TextType::class)
-            ->add('clientPrenom', TextType::class)
+            ->add('clientNom', TextType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('clientPrenom', TextType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('clientSexe', ChoiceType::class, [
                 'choices'  => [
                     'Homme' => 1,
                     'Femme' => 2,
-                    'Helicoptère combat' => 3,
-                    'Asexuée' => 4,
-                    'Intersexuée' => 5,
-                    'Code wifi' => 6,
-                    'Raptor' => 7,
-                    'Ne prefere pas en parler' => 8,
-                    'Cailloux' => 9,
+                    'Licorne' => 3,
+                    'Moi' => 4,
+                    'Personne' => 5,
+                    'Framework' => 6,
+                    'Sexe inexistant dans cet univers tridimensionnel' => 7,
+                    'Non Binaire' => 8,
                     'Autre' => 0,
-                ]
+                ],
+                'attr' => [
+                    'class' => 'ChoiceArea' 
+                ],
             ])
-            ->add('clientMail', EmailType::class)
-            ->add('clientCompteVerif', BoolType::class)
-            ->add('clientTel', TelType::class)
-            ->add('save', SubmitType::class, array('label' => 'Update'))
+            ->add('clientMail', EmailType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('clientCompteVerif',CheckboxType::class)
+            ->add('clientTel', TelType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('save', SubmitType::class, ['label' => 'Mettre a jour', 'attr' => ['class' => 'Button']])
             ->getForm();
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted()) {
+        if ($form->isSubmitted() && $form->isValid()) {
 
             $client = $form->getData();
             $em->flush();
@@ -105,7 +99,108 @@ class ClientController extends Controller
 
         return $this->render(
             'client/edit.html.twig',
+            array('form' => $form->createView(),'id' => $id)
+        );
+    }
+
+    /**
+     * @Route("/creer-client")
+     */
+    public function createAction(Request $request)
+    {
+        $client = new client();
+        $form = $this->createFormBuilder($client)
+            ->add('clientNom', TextType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('clientPrenom', TextType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('clientMdp', PasswordType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('clientSexe', ChoiceType::class, [
+                'choices'  => [
+                    'Homme' => 1,
+                    'Femme' => 2,
+                    'Licorne' => 3,
+                    'Moi' => 4,
+                    'Personne' => 5,
+                    'Framework' => 6,
+                    'Sexe inexistant dans cet univers tridimensionnel' => 7,
+                    'Non Binaire' => 8,
+                    'Autre' => 0,
+                ],
+                'attr' => [
+                    'class' => 'ChoiceArea'
+                ],
+            ])
+            ->add('clientCompteVerif',CheckboxType::class)
+            ->add('clientMail', EmailType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('clientTel', TelType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('save', SubmitType::class, ['label' => 'Valider', 'attr' => ['class' => 'Button']])
+            ->getForm(); 
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()) {
+
+            $client = $form->getData();
+
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($client);
+            $em->flush();
+
+            return $this->redirect('/voir-client/' . $client->getId());
+        }
+
+        return $this->render(
+            'client/edit.html.twig',
             array('form' => $form->createView())
         );
     }
+
+    /**
+     * @Route("/voir-client/{id}")
+     */
+    public function viewAction($id)
+    {
+        $client = $this->getDoctrine()
+        ->getRepository('CharlesBundle:Client')
+        ->find($id);
+
+        if (!$client) {
+            $Erreur = 'Il n\'y a pas de client ayant l\'id ' . $id;
+            return $this->render(
+                'client/view.html.twig',
+                array('Erreur' => $Erreur)
+            );
+        }
+
+        // On met la valeur de IsLogin sur true entant donné que tout le monde est login tout le temps
+        $IsLogin = true; 
+
+        
+        return $this->render(
+            'client/view.html.twig',
+             array('client' => $client, 'IsLogin' => $IsLogin)
+        );
+
+    }
+
+    /**
+     * @Route("/suppr-client/{id}")
+     */
+    public function supprAction($id)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $client = $em->getRepository('CharlesBundle:client')->find($id);
+
+        if (!$client) {
+            throw $this->createNotFoundException(
+                'There are no clients with the following id: ' . $id
+            );
+        }
+
+        $em->remove($client);
+        $em->flush();
+
+        return $this->redirect('/montrer-clients');
+    }
+
 }
