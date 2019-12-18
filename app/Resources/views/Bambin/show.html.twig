@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>bambin.esc.com</title>
+    <link rel="stylesheet" type="text/css" href="../css/master.css">
+    
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="TextCadre">
+                <h1>Bambin.esc.com</h1>
+                <h3>La branche bambin de esc.com</h3>
+            </div>
+            <div class="CircleForPic">
+                <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
+            </div>
+        </header>
+        <div class="BottomLine"></div>
+        <section>
+            <h4>Liste des bambins</h4>
+            
+            {% if bambins is not empty %}
+                <table>
+                    <thead>
+                        <tr>
+                        <th>Nom</th>
+                        {# <th>Nom</th> #}
+                        <th>Age</th>
+                        <th class="RightInvisibleTh"></th>
+                        {# <th>Voir le profil</th> #}
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for bambin in bambins %}
+                        <tr>
+                            {# <td class="LeftThOrTd">{{ bambin.bambinPrenom }}</td> #}
+                            {# <td>{{ bambin.bambinNom | upper }}</td> #}
+                            <td> {{ bambin.bambinPrenom }} {{ bambin.bambinNom | upper }} </td>
+                            <td>{{ bambin.bambinDateNaiss | date('Y-m-d') }}</td>
+                            <td  class="RightLink"><a href="voir-bambin/{{ bambin.id }}">Voir le profil</a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>Aucune bambin trouvée.</p>
+            {% endif %}
+
+        </section>
+        <div class="BottomLine"></div>
+    </main>
+</body>
+
+</html>
