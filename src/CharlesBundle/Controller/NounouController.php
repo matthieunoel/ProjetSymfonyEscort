@@ -239,4 +239,12 @@ class NounouController extends Controller
         return $this->redirect('/montrer-nounous');
     }
 
+    /**
+     * @Route("/login-nounou")
+     */
+    public function loginAction()
+    {
+        return $this->redirect('/menu-nounou');
+    }
+
 }

@@ -26,7 +26,7 @@ class SurveillanceController extends Controller
 {
 
     /**
-     * @Route("/valider-srv/{id}")
+     * @Route("/validation-srv/{id}")
      */
     public function ValidateAction(Request $request, $id)
     {
@@ -37,7 +37,7 @@ class SurveillanceController extends Controller
         if (!$nounou) {
             $Erreur = 'Il n\'y a pas de nounou ayant l\'id ' . $id;
             return $this->render(
-                'nounou/view.html.twig',
+                'surveillance/accept.html.twig',
                 array('Erreur' => $Erreur)
             );
         }
@@ -59,17 +59,20 @@ class SurveillanceController extends Controller
     {
 
         $em = $this->getDoctrine()->getManager();
-        $nounou = $em->getRepository('CharlesBundle:Nounou')->find($id);
+        $surveillance = $em->getRepository('CharlesBundle:Surveillance')->find($id);
 
-        if (!$nounou) {
-            throw $this->createNotFoundException(
-                'There are no nounous with the following id: ' . $id
+        if (!$surveillance) {
+            $Erreur = 'Il n\'y a pas de surveillance ayant l\'id ' . $id;
+            return $this->render(
+                'surveillance/accept.html.twig',
+                array('Erreur' => $Erreur)
             );
         }
 
-        $em->remove($nounou);
+        // $em-> ($surveillance);
+        $surveillance->setSrvValide(true);
         $em->flush();
 
-        return $this->redirect('/valider-srv' + $);
+        return $this->redirect("/validation-srv/ {$id}");
     }
 }
