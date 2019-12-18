@@ -11,8 +11,8 @@
     <main>
         <header>
             <div class="TextCadre">
-                <a href="/" ><h1>Nounou.esc.com</h1></a>
-                <h3>La branche nounou de esc.com</h3>
+                <a href="/"><h1>Nounou.esc.com</h1>
+                <h3>La branche nounou de esc.com</h3></a>
             </div>
             <div class="CircleForPic">
                 <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
@@ -22,6 +22,7 @@
         <section>
             {% if Erreur is defined %}
             <h1 class="Erreur"> Erreur : {{ Erreur }} </h1>
+            <a href="javascript:history.go(-1)">Retourner en arrière</a>
             {% else %}
             <div id="ProfilHeader">
                 <h4>{{ nounou.nounouNom | upper }}  {{ nounou.nounouPrenom }}</h4>

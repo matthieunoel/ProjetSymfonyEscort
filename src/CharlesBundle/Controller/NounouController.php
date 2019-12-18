@@ -11,11 +11,10 @@ namespace CharlesBundle\Controller;
     use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
     use CharlesBundle\Entity\Nounou;
-    // use Doctrine\DBAL\Types\DateType;
     use Doctrine\DBAL\Types\TextType as TypesTextType;
-use Doctrine\ORM\Mapping\Id;
-use Symfony\Component\Form\Extension\Core\Type\ButtonType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+    use Doctrine\ORM\Mapping\Id;
+    use Symfony\Component\Form\Extension\Core\Type\ButtonType;
+    use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
     use Symfony\Component\Form\Extension\Core\Type\EmailType;
     use Symfony\Component\Form\Extension\Core\Type\TelType;
     use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -238,6 +237,22 @@ class NounouController extends Controller
         $em->flush();
 
         return $this->redirect('/montrer-nounous');
+    }
+
+    /**
+     * @Route("/login-nounou")
+     */
+    public function loginAction()
+    {
+        return $this->redirect('/menu-nounou');
+    }
+
+    /**
+     * @Route("/menu-nounou")
+     */
+    public function menuAction()
+    {
+        return $this->render('nounou/menu.html.twig');
     }
 
 }
