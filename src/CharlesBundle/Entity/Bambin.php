@@ -57,9 +57,11 @@ class Bambin
     private $bambinDetails;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Client::class)
+     * @var string
+     *
+     * @ORM\Column(name="client_id", type="integer")
      */
-    protected $client;
+    protected $client_id;
 
 
     /**
@@ -70,6 +72,16 @@ class Bambin
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Get clientid
+     *
+     * @return int
+     */
+    public function getClientId()
+    {
+        return $this ->client_id;
     }
 
     /**

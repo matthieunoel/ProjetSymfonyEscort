@@ -31,23 +31,17 @@
                     <div id="TopDesc">
                         <p>
                         {% if bambin.bambinSexe == 1 %}
-                        Un homme
+                        Un Garçon
                         {% elseif bambin.bambinSexe == 2 %}
-                        Une femme
+                        Une Fille
                         {% elseif bambin.bambinSexe == 3 %}
-                        Un hélicoptère 2 Kombat
+                        Un Gamin
                         {% elseif bambin.bambinSexe == 4 %}
-                        Un asexué
+                        Un Kikou LOL joueur de Fortnite
                         {% elseif bambin.bambinSexe == 5 %}
-                        Un intersexué
+                        Un Baveux
                         {% elseif bambin.bambinSexe == 6 %}
-                        Un code wifi
-                        {% elseif bambin.bambinSexe == 7 %}
-                        Un raptor
-                        {% elseif bambin.bambinSexe == 8 %}
-                        Une personne ne préférant pas parler de son sexe
-                        {% elseif bambin.bambinSexe == 10 %}
-                        Des cailloux
+                        Un Accident
                         {% elseif bambin.bambinSexe == 0 %}
                         Un autre
                         {% else %}
@@ -65,7 +59,7 @@
                     </p>
                     {% if IsLogin %}
                         <p>
-                            <a href={{ ("/modif-bambin/" ~ bambin.id) | trans }}>Modifier le compte</a>
+                            <a href={{ ("/modif-bambin/" ~ bambin.id) | trans }}>Modifier le compte</a> 
                         </p>
                     {% endif %}
                 </div>

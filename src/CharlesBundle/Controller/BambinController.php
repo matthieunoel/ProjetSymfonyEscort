@@ -43,7 +43,7 @@ class BambinController extends Controller
     }
 
     /**
-     * @Route("/modif-bambin/{id}")
+     * @Route("/modif-bambin/{id}")   
      */
     public function updateAction(Request $request, $id)
     {
@@ -70,16 +70,13 @@ class BambinController extends Controller
             ->add('bambinPrenom', TextType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('bambinSexe', ChoiceType::class, [
                 'choices'  => [
-                    'Homme' => 1,
-                    'Femme' => 2,
-                    'Helicoptere 2 Kombat' => 3,
-                    'Asexuee' => 4,
-                    'Intersexuee' => 5,
-                    'Code wifi' => 6,
-                    'Raptor' => 7,
-                    'Ne prefere pas en parler' => 8,
-                    'Cailloux' => 9,
-                    'Autre' => 0,
+                    'Un Garçon' => 1,
+                    'Une Fille' => 2,
+                    'Gamin' => 3,
+                    'Un Kikou LOL joueur de Fortnite' => 4,
+                    'Un Baveux' => 5,
+                    'Un Accident' => 6,
+                    'Un Atutre' => 0,
                 ],
                 'attr' => [
                     'class' => 'ChoiceArea'
@@ -118,23 +115,20 @@ class BambinController extends Controller
      */
     public function createAction(Request $request, $id)
     {
-
         $bambin = new bambin();
         $form = $this->createFormBuilder($bambin)
             ->add('bambinNom', TextType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('bambinPrenom', TextType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('client_id', TextType::class, ['attr' => ['class' => 'TextArea'],]) 
             ->add('bambinSexe', ChoiceType::class, [
                 'choices'  => [
-                    'Homme' => 1,
-                    'Femme' => 2,
-                    'Helicoptere 2 Kombat' => 3,
-                    'Asexue' => 4,
-                    'Intersexue' => 5,
-                    'Code wifi' => 6,
-                    'Raptor' => 7,
-                    'Ne prefere pas en parler' => 8,
-                    'Cailloux' => 9,
-                    'Autre' => 0,
+                    'Un Garçon' => 1,
+                    'Une Fille' => 2,
+                    'Gamin' => 3,
+                    'Un Kikou LOL joueur de Fortnite' => 4,
+                    'Un Baveux' => 5,
+                    'Un Accident' => 6,
+                    'Un Autre' => 0,
                 ],
                 'attr' => [
                     'class' => 'ChoiceArea'
@@ -162,7 +156,7 @@ class BambinController extends Controller
             $em->persist($bambin);
             $em->flush();
 
-            return $this->redirect('/voir-bambin/' . $bambin->getId());
+            return $this->redirect('/voir-bambin/'  . $bambin->getId());  //. $bambin->getClientId() . '/' à ajouter quand client_id ne sera plus nul
         }
 
         return $this->render(
@@ -222,7 +216,7 @@ class BambinController extends Controller
         $em->remove($bambin);
         $em->flush();
 
-        return $this->redirect('/montrer-bambins');
+        return $this->redirect('/montrer-bambins' );        // '/' . getClientId() . 
     }
 
 }
