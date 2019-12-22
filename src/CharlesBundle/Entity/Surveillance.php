@@ -144,6 +144,18 @@ class Surveillance
     }
 
     /**
+     * Set client
+     *
+     * @param Client $client
+     *
+     * @return Surveillance
+     */
+    public function setclient($client)
+    {
+        $this->client = $client;
+        return $this;
+    }
+    /**
      * Get clientId
      *
      * @return string
@@ -161,5 +173,17 @@ class Surveillance
     public function getNounou()
     {
         return $this->nounou;
+    }
+    /**
+     * Set nounou
+     *
+     * @param Nounou $nounou
+     *
+     * @return Surveillance
+     */
+    public function setnounou($nounou)
+    {
+        $this->nounou = $nounou;
+        return $this;
     }
 }

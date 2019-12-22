@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>nounou.esc.com</title>
+    <link rel="stylesheet" type="text/css" href="../css/master.css">
+    
+</head>
+
+
+<body>
+        
+    <main>
+        <header>
+            <div class="TextCadre">
+                <h1>Nounou.esc.com</h1>
+                <h3>La branche Surveillance de <a href="https://www.google.com/search?sxsrf=ACYBGNSaEOIw1q75tWAyjhQrV7Yjfeb5Lw%3A1577046925966&source=hp&ei=jdP_XdGqOMecjLsP1ry28As&q=Esc+pour+escorte&oq=Esc+pour+escorte&gs_l=psy-ab.3...306.3338..3762...1.0..0.197.1457.9j6......0....1..gws-wiz.......0j0i203j0i22i10i30j0i22i30j33i160j33i21.DcZ6H6RBsMw&ved=0ahUKEwiRpcHOjcrmAhVHDmMBHVaeDb4Q4dUDCAY&uact=5" style="text-decoration: underline;">esc.com</a></h3>
+            </div>
+            <div class="CircleForPic">
+                <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
+            </div>
+        </header>
+        <div class="BottomLine"></div>
+        <section>
+
+            {% if Erreur is defined %}
+            <h1 class="Erreur"> Erreur : {{ Erreur }} </h1>
+            {% else %}
+
+            <h4>Creation d'une surveillance</h4>
+
+            Notes : toutes les demandes seront associées a la nounou ayant l'id 1
+
+            {# <li>
+                    <a href="/creer-srv/1">Faire de demande de surveillance</a>
+            </li> #}
+            
+            {{ form_start(form) }}
+
+                <table>
+                <tbody>
+
+                    <tr>
+                    <th>Lieu:</th>
+                    <td>{{ form_widget(form.srvLieu) }}</td>
+                    </tr>
+
+                    <tr>
+                    <th>Date:</th>
+                    <td>{{ form_widget(form.srvDate) }}</td>
+                    </tr>
+
+                    <tr>
+                    <th>Duree:</th>
+                    <td>{{ form_widget(form.srvDuree) }}</td>
+                    </tr>
+
+                    <tr>
+                    <th>Id de la nounou:</th>
+                    <td>{{ form_widget(form.nounou) }}</td>
+                    </tr>
+
+                    <tr>
+                    <th></th>
+                    <td>
+                        {{ form_widget(form.save) }} 
+                        {# {% if app.request.pathinfo | slice(1, 5) == 'modif' %} 
+                            <a href={{ ("/suppr-srv/" ~ id) | trans }} class="Button">Supprimer</a>
+                        {% endif %} #}
+                    </td>
+                    </tr>
+
+                </tbody>
+                </table>
+
+            {{ form_end(form) }} 
+
+            {% endif %}
+
+        </section>
+        <div class="BottomLine"></div>
+    </main>        
+        
+</body>  
+
+
+
+</html>
