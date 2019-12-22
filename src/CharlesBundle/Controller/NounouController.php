@@ -200,6 +200,7 @@ class NounouController extends Controller
         $em->flush();
         return $this->redirect('/montrer-nounous');
     }
+
     /**
      * @Route("/login-nounou")
      */
@@ -207,6 +208,7 @@ class NounouController extends Controller
     {
         return $this->redirect('/menu-nounou');
     }
+  
     /**
      * @Route("/menu-nounou")
      */
@@ -214,4 +216,5 @@ class NounouController extends Controller
     {
         return $this->render('nounou/menu.html.twig');
     }
+
 }

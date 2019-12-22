@@ -142,6 +142,7 @@ class Surveillance
     {
         return $this->srvValide;
     }
+
     /**
      * Get clientId
      *
@@ -151,6 +152,7 @@ class Surveillance
     {
         return $this->client;
     }
+  
     /**
      * Get nounou
      *

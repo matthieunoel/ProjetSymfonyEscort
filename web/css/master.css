@@ -42,6 +42,10 @@ header .TextCadre {
     justify-content: center;
 }
 
+header a {
+    text-decoration: none;
+}
+
 h1 {
     margin: 0;
 }
@@ -204,6 +208,14 @@ table {
     border-right: black solid 2px;
 }
 
+.InvisibleLeftThOrTd {
+    font-weight: bold;
+    border: none;
+    border-left: black solid 1px;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+}
+
 .RightInvisibleTh {
     border: none;
     border-left: black solid 1px;
@@ -238,6 +250,10 @@ td.RightLink a {
     justify-content: center;
     align-items: center;
     font-weight: bold;
+}
+
+.NoBorder {
+    border: none !important;
 }
 
 td.RightLink a:hover {

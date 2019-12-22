@@ -2,10 +2,17 @@
 namespace CharlesBundle\Controller;
     use Symfony\Bundle\FrameworkBundle\Controller\Controller;
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+
+namespace CharlesBundle\Controller;
+
+    use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+    use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+
     use Symfony\Component\HttpFoundation\Request;
     use Symfony\Component\Form\Extension\Core\Type\TextType;
     use Symfony\Component\Form\Extension\Core\Type\TextareaType;
     use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
     use CharlesBundle\Entity\Surveillance;
     // use Doctrine\DBAL\Types\DateType;
     use Doctrine\DBAL\Types\TextType as TypesTextType;
@@ -16,6 +23,7 @@ namespace CharlesBundle\Controller;
     use Symfony\Component\Form\Extension\Core\Type\TelType;
     use Symfony\Component\Form\Extension\Core\Type\DateType;
     use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+
 class SurveillanceController extends Controller
 {
     /**
@@ -25,6 +33,7 @@ class SurveillanceController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $nounou = $em->getRepository('CharlesBundle:Nounou')->find($id);
+
         if (!$nounou) {
             $Erreur = 'Il n\'y a pas de nounou ayant l\'id ' . $id;
             return $this->render(
@@ -32,21 +41,26 @@ class SurveillanceController extends Controller
                 array('Erreur' => $Erreur)
             );
         }
+
         $surveillances = $this->getDoctrine()
             ->getRepository('CharlesBundle:Surveillance')
             ->findAll();
+
         return $this->render(
             'Surveillance/accept.html.twig',
             array('nounou' => $nounou, 'surveillances' => $surveillances, 'IdUrl' => $id)
         );
     }
+  
     /**
      * @Route("/accepter-srv/{id}")
      */
     public function supprAction($id)
     {
+
         $em = $this->getDoctrine()->getManager();
         $surveillance = $em->getRepository('CharlesBundle:Surveillance')->find($id);
+
         if (!$surveillance) {
             $Erreur = 'Il n\'y a pas de surveillance ayant l\'id ' . $id;
             return $this->render(
@@ -58,6 +72,8 @@ class SurveillanceController extends Controller
         $surveillance->setSrvValide(true);
         $nounou = $em->getRepository('CharlesBundle:Nounou')->find($surveillance->getNounou());
         $em->flush();
+        $em->flush();
+
         return $this->redirect("/validation-srv/{$nounou->getId()}");
     }
 }
