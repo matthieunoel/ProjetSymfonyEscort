@@ -83,7 +83,7 @@ class ClientController extends Controller
                 ],
             ])
             ->add('clientMail', EmailType::class, ['attr' => ['class' => 'TextArea'],])
-            ->add('clientCompteVerif',CheckboxType::class)
+            ->add('clientCompteVerif',CheckboxType::class, ['attr' => ['checked'   => 'checked'],])
             ->add('clientTel', TelType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('save', SubmitType::class, ['label' => 'Mettre a jour', 'attr' => ['class' => 'Button']])
             ->getForm();

@@ -25,46 +25,41 @@
             {% else %}
             <div id="ProfilHeader">
                 <h4>{{ client.clientNom | upper }}  {{ client.clientPrenom }}</h4>
-                <div class="CircleForPic ReversePic" id="AvatarCircle">
-                        <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
-                </div>
             </div>
             <div class="ProfilContainer">
                 <div id="ColumnLeft">
                     <div id="TopDesc">
+                        <p>[Liste des bambins]</p>
+                    </div>
+                </div>
+                <div id="ColumnRight">
+                    <div id="Contact">
+                        <h4>
+                        Sexe :
+                        </h4>
                         <p>
                         {% if client.clientSexe == 1 %}
-                        Un homme
+                        Homme
                         {% elseif client.clientSexe == 2 %}
-                        Une femme
+                        Femme
                         {% elseif client.clientSexe == 3 %}
-                        Une Licorne
+                        Licorne
                         {% elseif client.clientSexe == 4 %}
                         Moi
                         {% elseif client.clientSexe == 5 %}
                         Personne
                         {% elseif client.clientSexe == 6 %}
-                        Un Framework
+                        Framework
                         {% elseif client.clientSexe == 7 %}
-                        De Sexe inexistant dans cet univers tridimensionnel
+                        Sexe inexistant dans cet univers tridimensionnel
                         {% elseif client.clientSexe == 8 %}
                         Non Binaire
                         {% elseif client.clientSexe == 0 %}
-                        Un autre
+                        Autre
                         {% else %}
-                        Un etre vivant
+                        Etre vivant
                         {% endif %}
                         </p>
-                        <p>
-                            Veut garder ses Bambins.
-                        </p>
-                    </div>
-                    <div id="TopDesc" style="margin-top:20px;">
-                        <p>Liste des bambins</p>
-                    </div>
-                </div>
-                <div id="ColumnRight">
-                    <div id="Contact">
                         <h4>
                             Telephone :
                         </h4>

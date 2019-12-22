@@ -31,6 +31,7 @@ class NounouController extends Controller
             array('nounous' => $nounous)
         );
     }
+
     /**
      * @Route("/modif-nounou/{id}")
      */
@@ -86,7 +87,7 @@ class NounouController extends Controller
             ->add('nounouAdresse', TextType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('nounouTelPro', TelType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('nounouTelPerso', TelType::class, ['attr' => ['class' => 'TextArea'],])
-            ->add('nounouPhoto', TextType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('nounouPhoto', TextType::class, ['attr' => ['class' => 'TextArea'], 'empty_data' => '', 'required' => False]) 
             ->add('save', SubmitType::class, ['label' => 'Mettre a jour', 'attr' => ['class' => 'Button']])
             ->getForm();
         $form->handleRequest($request);
@@ -100,6 +101,7 @@ class NounouController extends Controller
             array('form' => $form->createView(), 'id' => $id)
         );
     }
+
     /**
      * @Route("/creer-nounou")
      */
@@ -141,10 +143,12 @@ class NounouController extends Controller
             ->add('nounouAdresse', TextType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('nounouTelPro', TelType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('nounouTelPerso', TelType::class, ['attr' => ['class' => 'TextArea'],])
-            ->add('nounouPhoto', TextType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('nounouPhoto', TextType::class, ['attr' => ['class' => 'TextArea'], 'empty_data' => '', 'required' => False])
             ->add('save', SubmitType::class, ['label' => 'Valider', 'attr' => ['class' => 'Button']])
             ->getForm(); 
+
         $form->handleRequest($request);
+
         if ($form->isSubmitted()) {
             $nounou = $form->getData();
             $em = $this->getDoctrine()->getManager();
@@ -157,6 +161,7 @@ class NounouController extends Controller
             array('form' => $form->createView())
         );
     }
+
     /**
      * @Route("/voir-nounou/{id}")
      */
@@ -184,6 +189,7 @@ class NounouController extends Controller
             array('nounou' => $nounou, 'IsLogin' => $IsLogin)
         );
     }
+
     /**
      * @Route("/suppr-nounou/{id}")
      */

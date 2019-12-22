@@ -31,17 +31,17 @@
                     <div id="TopDesc">
                         <p>
                         {% if bambin.bambinSexe == 1 %}
-                        Un Garçon
+                        Un garçon
                         {% elseif bambin.bambinSexe == 2 %}
-                        Une Fille
+                        Une fille
                         {% elseif bambin.bambinSexe == 3 %}
-                        Un Gamin
+                        Un gamin
                         {% elseif bambin.bambinSexe == 4 %}
-                        Un Kikou LOL joueur de Fortnite
+                        Un kikou LOL joueur de Fortnite
                         {% elseif bambin.bambinSexe == 5 %}
-                        Un Baveux
+                        Un baveux
                         {% elseif bambin.bambinSexe == 6 %}
-                        Un Accident
+                        Un accident
                         {% elseif bambin.bambinSexe == 0 %}
                         Un autre
                         {% else %}
@@ -53,14 +53,14 @@
                     </div>
 					</div>
                 </div>
-                <div id="ColumnRight">
+                <div id="ColumnRight" style="position: relative; bottom: 0.7em;">
                     <p>
                         <a href="/montrer-bambins">Voir la liste des bambins</a>
                     </p>
                     {% if IsLogin %}
-                        <p>
-                            <a href={{ ("/modif-bambin/" ~ bambin.id) | trans }}>Modifier le compte</a> 
-                        </p>
+                    <p>
+                        <a href={{ ("/modif-bambin/" ~ bambin.id) | trans }}>Modifier le compte</a> 
+                    </p>
                     {% endif %}
                 </div>
             </div>
