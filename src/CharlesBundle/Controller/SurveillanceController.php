@@ -1,9 +1,5 @@
 <?php
 namespace CharlesBundle\Controller;
-    use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-    use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-
-namespace CharlesBundle\Controller;
 
     use Symfony\Bundle\FrameworkBundle\Controller\Controller;
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
