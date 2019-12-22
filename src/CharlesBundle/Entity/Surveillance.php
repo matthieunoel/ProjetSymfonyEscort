@@ -164,5 +164,23 @@ class Surveillance
     {
         return $this->srvValide;
     }
+    /**
+     * Get clientId
+     *
+     * @return string
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
+    /**
+     * Get nounou
+     *
+     * @return string
+     */
+    public function getNounou()
+    {
+        return $this->nounou;
+    }
 }
 

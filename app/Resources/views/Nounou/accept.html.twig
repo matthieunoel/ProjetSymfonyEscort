@@ -1,0 +1,65 @@
+ <! DOCTYPE html>
+
+<html>
+
+<head>
+    <title> nounou.esc.com </title>
+    <link  rel = " stylesheet "  type = " text / css "  href = " ../ css/ master.css ">
+
+</head>
+
+<body>
+    <principal>
+        <header>
+            <div  class = " TextCadre ">
+                <A  href = " / "> <h1> Nounou.esc.com </h1>
+                <h3> La branche nounou de esc.com </h3> </a>
+            </div>
+            <div  class = " CircleForPic ">
+                <img  src = " https://image.flaticon.com/icons/svg/1876/1876832.svg "  alt = " Logo de baby-sitter ">
+            </div>
+        </header>
+        <div  class = " BottomLine "> </div>
+        <section>
+            {% si  Erreur  est  définie %}
+            <h1  class = " Erreur "> Erreur: {{ Erreur }} </h1>
+            <A  href = " javascript: history.go (-1) "> Retourner en arrière </a>
+            {% else %}
+            <h4> Liste des surveillance de {{ nounou . nounouPrenom | supérieur  ~  "  "  ~  nounou . nounouNom }}. </h4>
+                <table>
+                    <thead>
+                        <tr>
+                        <th  class = " LeftThOrTd "> Date et heure </th>
+                        {# <th> Nom </th> #}
+                        <th> Lieu </th>
+                        <th  class = " RightInvisibleTh "> </th>
+                        {# <th> Voir le profil </th> #}
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% pour la  surveillance  dans les  surveillances %}
+                        {% si  surveillance . nounou . id  ==  IdUrl %}
+                        <tr>
+                            {# <td> {{surveillance.nounou.id}} </td> #}
+                            <td  class = " LeftThOrTd "> {{ surveillance . srvDate | date ( ' Ymd ' )}}
+                                : {{ surveillance . srvDuree | date ( ' Ymd ' )}} </td>
+                            <td> {{ surveillance . srvLieu }} </td>
+                            {% si  surveillance . srvValide %}
+                            <td  class = " InvisibleLeftThOrTd "> Validée <span  style = " color: green; font-size: 1.5em; "> ✓ <span> </td>
+                            {% else %}
+                            <Td   class = " RightLink "> <a  href = " / suppr-srv / {{ surveillance . Id }} "> Refuser </a> </td>
+                            <Td   class = " RightLink NoBorder "> <a  href = " / srv-accepteur / {{ surveillance . Id }} "> Accepter </a> </td>
+                            {% endif %}
+                        </tr>
+                        {% endif %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+
+        </section>
+        <div  class = " BottomLine "> </div>
+    </main>
+</body>
+
+</html>

@@ -211,6 +211,14 @@ table {
     background-color: rgba(0, 0, 0, 0);
 }
 
+.InvisibleLeftThOrTd {
+    font-weight: bold;
+    border: none;
+    border-left: black solid 1px;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+}
+
 td.RightLink {
     border: none;
     border-left: black solid 1px;
@@ -234,6 +242,10 @@ td.RightLink a {
 
 td.RightLink a:hover {
     filter: invert(100%);
+}
+
+.NoBorder {
+    border: none !important;
 }
 
 /* --- EDIT --- */
