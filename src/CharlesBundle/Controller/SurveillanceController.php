@@ -8,7 +8,7 @@ namespace  CharlesBundle\Controller;
     use  Symfony\Component\Form\Extension\Core\Type\SubmitType;
     use  CharlesBundle\Entity\Surveillance;
     // utilise Doctrine\DBAL\Types\DateType;
-    use  Doctrine\DBAL\Types\TextType  comme  TypesTextType;
+    use  Doctrine\DBAL\Types\TextType as TypesTextType;
     use  Doctrine\ORM\Mapping\Id;
     use  Symfony\Component\Form\Extension\Core\Type\ButtonType;
     use  Symfony\Component\Form\Extension\Core\Type\ChoiceType;
