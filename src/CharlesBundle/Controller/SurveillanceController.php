@@ -31,7 +31,7 @@ class SurveillanceController extends Controller
         $nounou = $em->getRepository('CharlesBundle:Nounou')->find($id);
 
         if (!$nounou) {
-            $Erreur = 'Il n\'y a pas de nounou ayant l\'id ' . $id;
+            $Erreur = 'Il n\'y a pas de surveillance ayant l\'id ' . $id;
             return $this->render(
                 'surveillance/accept.html.twig',
                 array('Erreur' => $Erreur)
