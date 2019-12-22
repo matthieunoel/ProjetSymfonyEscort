@@ -119,7 +119,7 @@ class BambinController extends Controller
         $form = $this->createFormBuilder($bambin)
             ->add('bambinNom', TextType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('bambinPrenom', TextType::class, ['attr' => ['class' => 'TextArea'],])
-            ->add('client_id', TextType::class, ['attr' => ['class' => 'TextArea'],]) 
+            // ->add('client_id', TextType::class, ['attr' => ['class' => 'TextArea'],]) 
             ->add('bambinSexe', ChoiceType::class, [
                 'choices'  => [
                     'Un Garçon' => 1,
@@ -154,6 +154,7 @@ class BambinController extends Controller
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($bambin);
+            $bambin->SetClientId($id);
             $em->flush();
 
             return $this->redirect('/voir-bambin/'  . $bambin->getId());  //. $bambin->getClientId() . '/' à ajouter quand client_id ne sera plus nul
