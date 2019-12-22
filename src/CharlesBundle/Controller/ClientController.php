@@ -44,10 +44,10 @@ class ClientController extends Controller
     }
 
     /**
-     * @Route("/modif-client")
+     * @Route("/modif-client/{id}")
      */
 
-    public function updateAction()
+    public function updateAction(Request $request , $id)
     {
 
         $em = $this->getDoctrine()->getManager();
@@ -65,6 +65,7 @@ class ClientController extends Controller
         $form = $this->createFormBuilder($client)
             ->add('clientNom', TextType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('clientPrenom', TextType::class, ['attr' => ['class' => 'TextArea'],])
+            ->add('clientMdp', PasswordType::class, ['attr' => ['class' => 'TextArea'],])
             ->add('clientSexe', ChoiceType::class, [
                 'choices'  => [
                     'Homme' => 1,
@@ -94,7 +95,7 @@ class ClientController extends Controller
             $client = $form->getData();
             $em->flush();
 
-            return $this->redirect('/view-client/' . $id);
+            return $this->redirect('/voir-client/' . $id);
         }
 
         return $this->render(
