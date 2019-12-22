@@ -1,4 +1,7 @@
 <?php
+namespace CharlesBundle\Controller;
+    use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+    use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 namespace CharlesBundle\Controller;
 
@@ -21,16 +24,13 @@ namespace CharlesBundle\Controller;
     use Symfony\Component\Form\Extension\Core\Type\DateType;
     use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
-
 class SurveillanceController extends Controller
 {
-
     /**
      * @Route("/validation-srv/{id}")
      */
     public function ValidateAction(Request $request, $id)
     {
-
         $em = $this->getDoctrine()->getManager();
         $nounou = $em->getRepository('CharlesBundle:Nounou')->find($id);
 
@@ -51,7 +51,7 @@ class SurveillanceController extends Controller
             array('nounou' => $nounou, 'surveillances' => $surveillances, 'IdUrl' => $id)
         );
     }
-
+  
     /**
      * @Route("/accepter-srv/{id}")
      */
@@ -68,11 +68,10 @@ class SurveillanceController extends Controller
                 array('Erreur' => $Erreur)
             );
         }
-
         // $em-> ($surveillance);
         $surveillance->setSrvValide(true);
         $nounou = $em->getRepository('CharlesBundle:Nounou')->find($surveillance->getNounou());
-
+        $em->flush();
         $em->flush();
 
         return $this->redirect("/validation-srv/{$nounou->getId()}");

@@ -11,8 +11,8 @@
     <main>
         <header>
             <div class="TextCadre">
-                <a href="/" ><h1>Nounou.esc.com</h1></a>
-                <h3>La branche client de esc.com</h3>
+                <a href="/" ><h1>Nounou.esc.com</h1>
+                <h3>La branche client de esc.com</h3></a>
             </div>
             <div class="CircleForPic">
                 <img src="https://image.flaticon.com/icons/svg/1876/1876832.svg" alt="Babysitter logo">
@@ -56,8 +56,11 @@
                         {% endif %}
                         </p>
                         <p>
-                            Veut garder son Bambin " " .
+                            Veut garder ses Bambins.
                         </p>
+                    </div>
+                    <div id="TopDesc" style="margin-top:20px;">
+                        <p>Liste des bambins</p>
                     </div>
                 </div>
                 <div id="ColumnRight">
@@ -84,6 +87,9 @@
                         </p>
                         <p>
                             <a href={{("/creer-bambin/" ~ client.id) | trans }}>Ajouter un Bambin</a>
+                        </p>
+                        <p>
+                            <a href={{"/montrer-bambins"}}>Voir la liste des bambins</a>
                         </p>
                     {% endif %}
                 </div>

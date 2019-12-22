@@ -203,4 +203,19 @@ class ClientController extends Controller
         return $this->redirect('/montrer-clients');
     }
 
+    /**
+     * @Route("/login-client")
+     */
+    public function loginAction()
+    {
+        return $this->redirect('/menu-client');
+    }
+    /**
+     * @Route("/menu-client")
+     */
+    public function menuAction()
+    {
+        return $this->render('client/menu.html.twig');
+    }
+
 }
