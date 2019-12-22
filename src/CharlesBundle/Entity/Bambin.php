@@ -85,6 +85,20 @@ class Bambin
     }
 
     /**
+     * Set bambinClient
+     *
+     * @param string $bambinClient
+     *
+     * @return Bambin
+     */
+    public function setClientId($bambinClient)
+    {
+        $this->bambinClient = $bambinClient;
+
+        return $this;
+    }
+
+    /**
      * Set bambinNom
      *
      * @param string $bambinNom

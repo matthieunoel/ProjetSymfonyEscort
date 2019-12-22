@@ -1,9 +1,5 @@
 <?php
 namespace CharlesBundle\Controller;
-    use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-    use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-
-namespace CharlesBundle\Controller;
 
     use Symfony\Bundle\FrameworkBundle\Controller\Controller;
     use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -71,7 +67,6 @@ class SurveillanceController extends Controller
         // $em-> ($surveillance);
         $surveillance->setSrvValide(true);
         $nounou = $em->getRepository('CharlesBundle:Nounou')->find($surveillance->getNounou());
-        $em->flush();
         $em->flush();
 
         return $this->redirect("/validation-srv/{$nounou->getId()}");
