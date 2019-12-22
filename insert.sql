@@ -1,0 +1,32 @@
+INSERT INTO nounou
+    (id, nounou_nom, nounou_prenom, nounou_mdp, nounou_mail, nounou_datenaiss, nounou_tarif, nounou_desc, nounou_adresse, nounou_tel_pro, nounou_tel_perso, nounou_photo, nounou_sexe) 
+VALUES
+    (1, 'Krystof', 'Thomass', 'azertyu', 'kt@mail.com', '2000-12-06', 25, 'Bonjour, je suis sympa et j\'aime les DoMac.', '5 boulevard des pissenlits, 69568, Ville', '0656895615', '0656895615', 'https://scontent-cdt1-1.xx.fbcdn.net/v/t31.0-8/20017660_1920717508185563_5376729730636105486_o.jpg?_nc_cat=100&_nc_ohc=ao7Ie99ivGEAQni_2uz1Fn7KMVQ3raJ9y4Hfig_qLaBh7Yrln4jQzncTQ&_nc_ht=scontent-cdt1-1.xx&oh=858dfbaa5d54afdbce8f7f0e45ec2014&oe=5EAF75F4', 3),
+    (6, 'KARPENTER', 'Wyatt', 'azertyu', 'mailtest4@mail.com', '2014-01-01', 15.5, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At quis risus sed vulputate odio ut enim blandit. Quam viverra orci sagittis eu volutpat. Euismod nisi porta lorem mollis aliquam ut porttitor leo a. Morbi non arcu risus quis varius quam quisque id diam. Nunc lobortis mattis aliquam faucibus purus in massa tempor. Sagittis nisl rhoncus mattis rhoncus urna. Ac placerat vestibulum lectus mauris ultrices eros. Aenean pharetra magna ac placerat vestibulum lectus. Est placerat in egestas erat imperdiet. Aliquam faucibus purus in massa. Tincidunt vitae semper quis lectus. Sed turpis tincidunt id aliquet risus feugiat in ante.', '59 rue de la mimolette, 64953 CitronVille', '0610111213', '0610111213', '', 8),
+    (8, 'McLane', 'John', 'azerty', 'mailtest6@mail.com', '1937-09-11', 2048, 'Bonjour, je suis John de la célèbre chanson \"Johny loves jenny but jenny loves Joe, ...\" Bref, je suis riche et célèbre, c\'est pourquoi je coûte cher. Mais bon, je suis un peu en dèche donc embauchez moi, bisous\r\n\r\n<b>John</b>', '12 rue de la poudre de PERLINPINPIN !', '0611223344', '0611223344', 'https://i.axs.com/2016/07/promoted-media_578902306fb26.jpg', 0),
+    (10, 'Piraud', 'Audrey', 'azertyu', 'mailtest7@mail.com', '2014-01-01', 27.5, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nUltrices tincidunt arcu non sodales neque sodales ut etiam. Montes nascetur ridiculus mus mauris vitae ultricies leo integer malesuada. Quis commodo odio aenean sed adipiscing diam donec. Malesuada proin libero nunc consequat interdum varius sit amet mattis. Ut placerat orci nulla pellentesque dignissim enim sit amet venenatis.', 'addresse wow truc truc', '0648596354', '0695873614', 'https://www.rd.com/wp-content/uploads/2017/09/01-shutterstock_476340928-Irina-Bg.jpg', 2),
+    (14, 'MUSCULUS', 'Marcel', 'azertyuiopmù', 'mailtest82684569542652@mail.com', '2000-04-04', 27.5, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dapibus ultrices in iaculis nunc. Eleifend mi in nulla posuere sollicitudin aliquam. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus. Vestibulum morbi blandit cursus risus at. Diam volutpat commodo sed egestas egestas fringilla. Vulputate odio ut enim blandit volutpat. Pretium vulputate sapien nec sagittis aliquam malesuada. In fermentum et sollicitudin ac orci. Venenatis lectus magna fringilla urna porttitor. A arcu cursus vitae congue. Pretium viverra suspendisse potenti nullam ac. Orci dapibus ultrices in iaculis nunc sed. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Pulvinar sapien et ligula ullamcorper malesuada proin. Est ante in nibh mauris cursus mattis molestie. Lectus proin nibh nisl condimentum id venenatis a condimentum. Aliquam id diam maecenas ultricies mi eget mauris pharetra.\r\n\r\nNunc scelerisque viverra mauris in. Commodo sed egestas egestas fringilla phasellus. Sit amet dictum sit amet justo donec enim. Iaculis at erat pellentesque adipiscing commodo elit at. Sed enim ut sem viverra aliquet eget sit. Et tortor consequat id porta nibh venenatis. Diam sollicitudin tempor id eu nisl nunc mi. Consectetur adipiscing elit duis tristique sollicitudin nibh sit amet commodo. Pulvinar pellentesque habitant morbi tristique senectus et netus. Neque egestas congue quisque egestas diam in arcu cursus euismod. Amet nisl purus in mollis nunc sed id semper. Turpis egestas sed tempus urna. Magna sit amet purus gravida quis. Nec sagittis aliquam malesuada bibendum arcu vitae elementum. Pellentesque elit eget gravida cum sociis natoque. Ac felis donec et odio pellentesque. Volutpat diam ut venenatis tellus in. Odio euismod lacinia at quis risus. Congue quisque egestas diam in arcu cursus. Elementum curabitur vitae nunc sed.', '12 rue du st marcelin', '0645859563', '0459585763', 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.videos-gag.net%2Fwp-content%2Fuploads%2F2016%2F01%2F01-1.jpg&f=1&nofb=1', 1);
+
+
+INSERT INTO client
+    (id, client_nom, client_prenom, client_sexe, client_mdp, client_compte_verif, client_tel, client_mail)
+VALUES
+    (1, 'De la muerte', 'Félipé', 1, 'azerty', 0, '0656895615', 'fdlm@mail.com'),
+    (2, 'Ben BRAHIM', 'AHRZAD', 4, 'azerty', 1, '0666666666', 'mailtestdu69@mail.miel'),
+    (4, 'Noel', 'Matthieu (client)', 5, 'password', 1, '0634303187', 'mailtestdu698484585@mail.miel');
+
+
+INSERT INTO bambin
+    (id, client_id, bambin_nom, bambin_prenom, bambin_datenaiss, bambin_sexe, bambin_details)
+VALUES
+    (1, 1, 'Fnon', 'Sirille', '2019-12-07', 2, 'Ze sui baite'),
+    (5, 4, 'Noel', 'Julien', '2004-04-19', 1, 'Il bave un peu, mais il est minion ^^.');
+
+
+INSERT INTO surveillance
+    (id, nounou_id, client_id, srv_date, srv_duree, srv_lieu, srv_valide)
+VALUES
+    (1, 1, 1, '2019-12-08 14:00:30', '05:59:30', 'Chez mwa', 1),
+    (2, 1, 1, '2020-01-09 00:00:00', '05:00:00', 'Chez mr bouboule', 0),
+    (38, 1, 2, '2019-12-23 04:19:00', '99:59:00', 'Chew babar', 1),
+    (40, 1, 4, '2019-01-01 00:00:00', '00:00:00', '12 rue de la mer mais aussi de michel', 0);
