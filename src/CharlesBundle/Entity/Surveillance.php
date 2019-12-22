@@ -1,9 +1,6 @@
 <?php
-
 namespace CharlesBundle\Entity;
-
 use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Surveillance
  *
@@ -20,45 +17,38 @@ class Surveillance
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="srv_date", type="datetime")
      */
     private $srvDate;
-
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="srv_duree", type="time")
      */
     private $srvDuree;
-
     /**
      * @var string
      *
      * @ORM\Column(name="srv_lieu", type="string", length=255)
      */
     private $srvLieu;
-
     /**
      * @var boolean
      *
      * @ORM\Column(name="srv_valide", type="boolean")
      */
     private $srvValide;
-
     /**
      * @ORM\ManyToOne(targetEntity=Nounou::class)
      */
     protected $nounou;
-
     /**
      * @ORM\ManyToOne(targetEntity=Client::class)
      */
     protected $client;
-
     /**
      * Get id
      *
@@ -68,7 +58,6 @@ class Surveillance
     {
         return $this->id;
     }
-
     /**
      * Set srvDate
      *
@@ -79,10 +68,8 @@ class Surveillance
     public function setSrvDate($srvDate)
     {
         $this->srvDate = $srvDate;
-
         return $this;
     }
-
     /**
      * Get srvDate
      *
@@ -92,7 +79,6 @@ class Surveillance
     {
         return $this->srvDate;
     }
-
     /**
      * Set srvDuree
      *
@@ -103,10 +89,8 @@ class Surveillance
     public function setSrvDuree($srvDuree)
     {
         $this->srvDuree = $srvDuree;
-
         return $this;
     }
-
     /**
      * Get srvDuree
      *
@@ -116,7 +100,6 @@ class Surveillance
     {
         return $this->srvDuree;
     }
-
     /**
      * Set srvLieu
      *
@@ -127,10 +110,8 @@ class Surveillance
     public function setSrvLieu($srvLieu)
     {
         $this->srvLieu = $srvLieu;
-
         return $this;
     }
-
     /**
      * Get srvLieu
      *
@@ -140,7 +121,6 @@ class Surveillance
     {
         return $this->srvLieu;
     }
-
     /**
      * Set srvValide
      *
@@ -151,10 +131,8 @@ class Surveillance
     public function setSrvValide($srvValide)
     {
         $this->srvValide = $srvValide;
-
         return $this;
     }
-
     /**
      * Get srvValide
      *
@@ -183,4 +161,3 @@ class Surveillance
         return $this->nounou;
     }
 }
-
