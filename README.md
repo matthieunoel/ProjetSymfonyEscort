@@ -1,7 +1,7 @@
 Un projet de Matthieu NOEL, Cyril FURNON, Thomas CHRISTOPHE et Simon PIJARD
 ========================
 
-Note au Mr.Mulot :
+Note a Mr.Mulot :
 ------------------
 Vous pouvez insérer nos exemples en base via PhpMyAdmin avec les inserts présents dans le fichier inset.sql présent dans la meme racine que ce fichier.
 
